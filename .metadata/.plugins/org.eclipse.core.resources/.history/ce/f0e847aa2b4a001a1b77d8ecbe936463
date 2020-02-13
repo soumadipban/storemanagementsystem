@@ -1,0 +1,11 @@
+package com.capgemini.service;
+
+public class CommonServiceImpl implements CommonService {
+
+	@Override
+	public void login(String name, String password) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

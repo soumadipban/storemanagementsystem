@@ -1,0 +1,94 @@
+package com.capgemini.storemanagement.controller;
+
+import java.util.Scanner;
+
+import org.apache.log4j.Logger;
+
+import com.capgemini.storemanagement.exception.UserNotFoundException;
+import com.capgemini.storemanagement.service.impl.AdminServiceImpl;
+
+public class StoreManagementController {
+
+	static Logger log = Logger.getLogger("store");
+	public static void main(String[] args) {
+
+		AdminServiceImpl service = new AdminServiceImpl();
+		Scanner sc = new Scanner(System.in);
+		int choice = 0;
+
+
+		/*		log.info("1.Admin");
+		log.info("2.Manufacturer");
+		log.info("3.Dealer");
+		log.info("4.Exit");*/
+
+		int count = 0;
+
+		do {
+			log.info("\n");
+			log.info("\t\tSTORE MANAGEMENT SYSTEM ");
+			log.info("\n");
+
+			log.info("\t\t1.Admin");
+			log.info("\t\t2.Manufacturer");
+			log.info("\t\t3.Dealer");
+			log.info("\t\t4.Exit");
+
+			log.info("\t\t------------------------");
+			log.info("\t\tEnter Your Choice");
+			log.info("\t\t------------------------");
+			choice = sc.nextInt();
+			sc.nextLine();
+
+			switch(choice) {
+			case 1:
+
+				log.info("*****LOGIN*****");
+
+				if(count<1) {
+					count++;	
+					log.info("Enter your Name");
+					String name = sc.next();
+					log.info("Enter the password");
+					String password = sc.next();
+					try {
+						boolean flag = service.login(name, password);
+						if(flag) {
+							log.info("Login Succesfull");
+							break;
+						}
+						else {
+							log.info("Invalid Data!!");
+						}
+					}catch(UserNotFoundException e) {
+						System.out.println(e.getMessage());
+					}
+				}
+
+				AdminController admin = new AdminController();
+				admin.adminTask();
+
+				break;
+
+			case 2:
+
+				ManufacturerController manufacturer = new ManufacturerController();
+				manufacturer.manufacturerTask();
+				break;
+
+			case 3:
+
+				DealerController dealer = new DealerController();
+				dealer.dealerTask();
+				break;
+
+
+			}
+		}while(choice!=4);
+
+		log.info("\t\tThankYou for using our Services!!!");
+
+	}
+
+}
+

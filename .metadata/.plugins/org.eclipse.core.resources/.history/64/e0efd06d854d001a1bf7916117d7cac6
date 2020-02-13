@@ -1,0 +1,23 @@
+package com.capgemini.storemanagement.dao;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.capgemini.storemanagement.dto.UserInformation;
+
+public interface AdminDao {
+	
+	public void addManufacturer(UserInformation user);
+	
+	public boolean login(String name, String password);
+	
+	
+	public void modifyManufacturer(int userId,UserInformation user);
+	
+	public boolean deleteManufacturer(int userId);
+	
+	public String showManufacturer();
+
+
+}

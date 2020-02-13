@@ -1,0 +1,166 @@
+package com.capgemini.storemanagement.controller;
+
+import java.util.Scanner;
+
+import org.apache.log4j.Logger;
+
+import com.capgemini.storemanagement.dao.impl.ManufacturerDaoImpl;
+import com.capgemini.storemanagement.dto.DealerSellingStockInfomation;
+import com.capgemini.storemanagement.dto.OrderInformation;
+import com.capgemini.storemanagement.dto.ProductInformation;
+import com.capgemini.storemanagement.service.impl.DealerServiceImpl;
+import com.capgemini.storemanagement.service.impl.ManufacturerServiceImpl;
+
+public class DealerController {
+	Scanner scan = new Scanner(System.in);
+	ManufacturerServiceImpl manufacturer = new ManufacturerServiceImpl();
+	DealerSellingStockInfomation stock;
+	DealerServiceImpl dealer = new DealerServiceImpl();
+	int choice = 0;
+
+	Logger log = Logger.getLogger("store");
+
+
+	/*
+	void addDealerStock(int idOfProduct2, int quantity, int i) {
+
+		DealerSellingStockInfomation sellingStock = new DealerSellingStockInfomation();
+
+		sellingStock.setProductId(idOfProduct2);
+		sellingStock.setQuantity(quantity);
+		sellingStock.setToalPrice(i);
+
+		dealer.addDataToTheStock(sellingStock);
+
+	}*/
+
+
+	void dealerTask() {
+
+		int choice = 0;
+
+		log.info("\n");
+		log.info("\t\tWelcome to the Dealer Page");
+		log.info("\t\t1.Show Product");
+		log.info("\t\t2.Order Particular Product");
+		log.info("\t\t3.Change Selling Price of the Product");
+		log.info("\t\t4.Show Order Information");
+		log.info("\t\t5.Exit");
+
+
+
+		do {
+
+			log.trace("\t\t------------------------");
+			log.trace("\t\tEnter Your Choice");
+			log.trace("\t\t------------------------");
+			choice = scan.nextInt();
+			scan.nextLine();
+			switch(choice) {
+			case 1:
+
+				log.info("\t\t--------------Product's Info----------------");
+				String productResult = manufacturer.showProductDetai();
+				log.info(productResult);
+				break;
+
+			case 2:
+				int quantity=0;
+
+				OrderInformation order = new OrderInformation();
+				stock = new DealerSellingStockInfomation();
+
+				log.info("Enter the product you want to Order");
+				String productName = scan.nextLine();
+
+				int id = dealer.returnProductId(productName);
+
+				order.setProductId(id);
+
+				log.info("Enter the Order Id");
+				int orderId = scan.nextInt();
+				order.setOrderId(orderId);
+
+				while(true) {
+					log.info("Enter Quantity of Stock");
+					quantity = scan.nextInt();
+					int quantityCheck = dealer.quantityChecker(id);
+					if(quantityCheck<quantity) {
+						log.info("Quantity is more than the current stock");
+					}else {
+						order.setQuantity(quantity);
+						int remainingQuantity  = quantityCheck-quantity;
+						dealer.updateProduct(id,remainingQuantity);
+						break;
+					}
+				}
+
+				int price = dealer.returnCostPrice(id); 
+				order.setTotalPrice(quantity*price);
+
+				dealer.orderProduct(order);
+
+				log.info("Order is Succesfully done");
+				
+				
+				if(dealer.checkProductId(id)) {
+					int dealerQuantity = dealer.dealerQuantity(id);
+					int quantityOfDealer = dealerQuantity+quantity;
+					dealer.updateQuantity(id,quantityOfDealer);
+					
+				}else {
+					stock.setProductId(id);
+					stock.setQuantity(quantity);
+					stock.setToalPrice(quantity*price);
+					dealer.addStorage(stock);
+				}
+
+				break;
+			case 3:
+
+				ProductInformation product = new ProductInformation();
+				log.info("Enter the Product detail You want to add the Selling Price");
+				String prodtName = scan.nextLine();
+				int prodtid = dealer.returnProductId(prodtName);
+
+				log.info("Enter the Selling Price");
+				int selling_price = scan.nextInt();
+				product.setSellingPrice(selling_price);
+
+				dealer.changePriceOfProduct(prodtid, product);
+				log.info("The Selling Price of "+prodtName+" is updated ");
+				break;
+
+			case 4:
+				log.info("\t\t--------------Order's Info----------------");
+				String orderResult = dealer.showOrderDetail();
+				log.info(orderResult);
+				break;
+				/*				
+			case 5:
+
+				stock = new DealerSellingStockInfomation();
+
+				log.info("Enter the product id");
+				int proId = scan.nextInt();
+				stock.setProductId(proId);
+
+				log.info("Enter the quantity");
+				int quantityOfProduct = scan.nextInt();
+				stock.setQuantity(quantityOfProduct);
+
+				log.info("Enter the price");
+				int priceOfProduct = scan.nextInt();
+				stock.setToalPrice(priceOfProduct);
+
+				dealer.addStorage(stock);
+				log.info("Detail in Updated in Storage Table!!Thank You");
+				break;*/
+
+			}
+
+		}while(choice!=5);
+	}
+
+
+}

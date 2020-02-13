@@ -1,0 +1,75 @@
+
+Úsquid:S1192_"Define a constant instead of duplicating this literal "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false" 5 times.(¹óôüÿÿÿÿ8ÿÅ¼ƒ.HÕARCRITICALZ
+CODE_SMELL
+`squid:S1148¥"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8œÉÜÓƒ.HÖARMINORZVULNERABILITY
+•squid:S2068‚"V'password' detected in this expression, review this potentially hard-coded credential.(¹óôüÿÿÿÿ8ÿÅ¼ƒ.H×ARBLOCKERZVULNERABILITY
+`squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÿÅ¼ƒ.HØARMINORZVULNERABILITY
+†squid:S1192ˆ"IDefine a constant instead of duplicating this literal "quantity" 3 times.(šñ»Óüÿÿÿÿ8‘ù¯âƒ.HÙARCRITICALZ
+CODE_SMELL
+|squid:HiddenFieldCheckÏ"7Rename "con" which hides the field declared at line 17.(îŞ—°ûÿÿÿÿ8•¦âƒ.HÚARMAJORZ
+CODE_SMELL
+|squid:HiddenFieldCheck‘"7Rename "con" which hides the field declared at line 17.(îŞ—°ûÿÿÿÿ8Œø†èƒ.HÛARMAJORZ
+CODE_SMELL
+bsquid:S4925İ"-Remove this "Class.forName()", it is useless.(Æ…ÈŸ8¿‰èƒ.HÜARMAJORZ
+CODE_SMELL
+•squid:S2068½"V'password' detected in this expression, review this potentially hard-coded credential.(¹óôüÿÿÿÿ8œÉÜÓƒ.HİARBLOCKERZVULNERABILITY
+squid:CommentedOutCodeLine#"<This block of commented-out lines of code should be removed.(ŸÅıØ8Š’÷çƒ.HŞARMAJORZ
+CODE_SMELL
+_squid:S1148J"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‘ù¯âƒ.HßARMINORZVULNERABILITY
+`squid:S1148³"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8³â»àƒ.HàARMINORZVULNERABILITY
+`squid:S1148ö"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÿÅ¼ƒ.HáARMINORZVULNERABILITY
+`squid:S1148—"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ÿ¬Òàƒ.HâARMINORZVULNERABILITY
+{squid:HiddenFieldCheckŸ"6Rename "ps" which hides the field declared at line 18.(§ÖûÌÿÿÿÿÿ8ûà™èƒ.HãARMAJORZ
+CODE_SMELL
+`squid:S1148è"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ªû¨áƒ.HäARMINORZVULNERABILITY
+`squid:S1148È"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÿÅ¼ƒ.HåARMINORZVULNERABILITY
+{squid:HiddenFieldCheckQ"7Rename "con" which hides the field declared at line 17.(îŞ—°ûÿÿÿÿ8³â»àƒ.HæARMAJORZ
+CODE_SMELL
+•squid:S2068—"V'password' detected in this expression, review this potentially hard-coded credential.(¹óôüÿÿÿÿ8ÿÅ¼ƒ.HçARBLOCKERZVULNERABILITY
+`squid:S1148Š"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8€ÇÍ¼ƒ.HèARMINORZVULNERABILITY
+bsquid:S4925–"-Remove this "Class.forName()", it is useless.(Æ…ÈŸ8³â»àƒ.HéARMAJORZ
+CODE_SMELL
+`squid:S1148Ö"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8†ÅŠœƒ.HêARMINORZVULNERABILITY
+Vsquid:S1643ˆ"Use a StringBuilder instead.(šñ»Óüÿÿÿÿ8ÿÅ¼ƒ.HëARMINORZ
+CODE_SMELL
+‚squid:S1192@"FDefine a constant instead of duplicating this literal "dburl" 6 times.(îŞ—°ûÿÿÿÿ8•¦âƒ.HìARCRITICALZ
+CODE_SMELL
+_squid:S1148i"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÿÅ¼ƒ.HíARMINORZVULNERABILITY
+”squid:S2068_"V'password' detected in this expression, review this potentially hard-coded credential.(¹óôüÿÿÿÿ8ÜÚæ›ƒ.HîARBLOCKERZVULNERABILITY
+usquid:HiddenFieldCheckĞ"6Rename "ps" which hides the field declared at line 18.(ÛıË<8•¦âƒ.HïARMAJORZ
+CODE_SMELL
+{squid:HiddenFieldCheck "6Rename "rs" which hides the field declared at line 19.(Ê´¢èüÿÿÿÿ8‘Ëİáƒ.HğARMAJORZ
+CODE_SMELL
+_squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÜÚæ›ƒ.HñARMINORZVULNERABILITY
+{squid:HiddenFieldCheck"6Rename "rs" which hides the field declared at line 19.(Ê´¢èüÿÿÿÿ8Şß£âƒ.HòARMAJORZ
+CODE_SMELL
+{squid:HiddenFieldCheck@"7Rename "con" which hides the field declared at line 17.(îŞ—°ûÿÿÿÿ8‘Ëİáƒ.HóARMAJORZ
+CODE_SMELL
+|squid:HiddenFieldCheck"7Rename "con" which hides the field declared at line 17.(îŞ—°ûÿÿÿÿ8Şß£âƒ.HôARMAJORZ
+CODE_SMELL
+squid:S1192f"KDefine a constant instead of duplicating this literal "product_id" 3 times.(ªÑ®(8‘Ëİáƒ.HõARCRITICALZ
+CODE_SMELL
+_squid:S1148w"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8•¦âƒ.HöARMINORZVULNERABILITY
+bsquid:S4925¼"-Remove this "Class.forName()", it is useless.(Æ…ÈŸ8³â»àƒ.H÷ARMAJORZ
+CODE_SMELL
+bsquid:S4925"-Remove this "Class.forName()", it is useless.(Æ…ÈŸ8³â»àƒ.HøARMAJORZ
+CODE_SMELL
+zsquid:HiddenFieldCheckA"6Rename "ps" which hides the field declared at line 18.(Ñ‚¼õúÿÿÿÿ8³â»àƒ.HùARMAJORZ
+CODE_SMELL
+•squid:S2068Ş"V'password' detected in this expression, review this potentially hard-coded credential.(¹óôüÿÿÿÿ8¿‰èƒ.HúARBLOCKERZVULNERABILITY
+_squid:S1148W"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‘Ëİáƒ.HûARMINORZVULNERABILITY
+`squid:S1148¥"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ªû¨áƒ.HüARMINORZVULNERABILITY
+asquid:S4925^"-Remove this "Class.forName()", it is useless.(Æ…ÈŸ8³â»àƒ.HıARMAJORZ
+CODE_SMELL
+dsquid:S1481¢"*Remove this unused "count" local variable.(ÿÕ¸œúÿÿÿÿ8Ú¦âËƒ.HşARMINORZ
+CODE_SMELL
+zsquid:HiddenFieldCheckR"6Rename "ps" which hides the field declared at line 18.(Ñ‚¼õúÿÿÿÿ8‘Ëİáƒ.HÿARMAJORZ
+CODE_SMELL
+|squid:HiddenFieldCheckÿ"7Rename "con" which hides the field declared at line 17.(îŞ—°ûÿÿÿÿ8ûà™èƒ.H€BRMAJORZ
+CODE_SMELL
+{squid:HiddenFieldCheck€"6Rename "ps" which hides the field declared at line 18.(§ÖûÌÿÿÿÿÿ8Œø†èƒ.HBRMAJORZ
+CODE_SMELL
+usquid:HiddenFieldCheck’"6Rename "ps" which hides the field declared at line 18.(ÛıË<8—åñçƒ.H‚BRMAJORZ
+CODE_SMELL
+squid:S1192^"VDefine a constant instead of duplicating this literal "com.mysql.jdbc.Driver" 5 times.(Æ…ÈŸ8ÿÅ¼ƒ.HƒBRCRITICALZ
+CODE_SMELL

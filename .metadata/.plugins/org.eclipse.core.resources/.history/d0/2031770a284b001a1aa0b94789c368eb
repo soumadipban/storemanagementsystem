@@ -1,0 +1,16 @@
+package com.capgemini.storemanagement.controller;
+
+import java.util.ArrayList;
+
+import com.capgemini.storemanagement.dao.impl.DealerDaoImpl;
+
+public class TestClass {
+	public static void main(String[] args) {
+		DealerDaoImpl dealer = new DealerDaoImpl();
+		
+		ArrayList<Object> a = dealer.showProductInfo();
+		for (Object object : a) {
+			log.info(object);
+		}
+	}
+}

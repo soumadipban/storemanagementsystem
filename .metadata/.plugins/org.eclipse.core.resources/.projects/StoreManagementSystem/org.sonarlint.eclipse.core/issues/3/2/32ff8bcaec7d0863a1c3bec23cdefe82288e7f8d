@@ -1,0 +1,9 @@
+
+~squid:HiddenFieldCheck":Rename "choice" which hides the field declared at line 20.(ÖÝÃ¹ùÿÿÿÿ8à“˜Ô‚.HËARMAJORZ
+CODE_SMELL
+‹squid:S00117q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù„×ýüÿÿÿÿ8²ÃÄ¼ƒ.HÌARMINORZ
+CODE_SMELL
+‰squid:S3776"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(Î¯¾¯8€µÛêƒ.HÍARCRITICALZ
+CODE_SMELL
+…squid:CommentedOutCodeLine€"<This block of commented-out lines of code should be removed.(ˆ©ÚŽþÿÿÿÿ8ôíšêƒ.HÎARMAJORZ
+CODE_SMELL

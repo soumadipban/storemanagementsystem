@@ -1,0 +1,17 @@
+
+q
+squid:S106"9Replace this use of System.out or System.err by a logger.(¨ÕÖåıÿÿÿÿ8ë¨šï‚.H=RMAJORZ
+CODE_SMELL
+squid:S2068"V'Password' detected in this expression, review this potentially hard-coded credential.(ù„äã8”·ëƒ.H¥=RBLOCKERZVULNERABILITY
+ˆsquid:S00100	"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍÜĞêÿÿÿÿÿ8ë¨šï‚.H¡=RMINORZ
+CODE_SMELL
+lsquid:S1854"8Remove this useless assignment to local variable "scan".(ÅÒ²º8”·ëƒ.H¤=RMAJORZ
+CODE_SMELL
+]squid:S1481")Remove this unused "scan" local variable.(ÅÒ²º8”·ëƒ.H¦=RMINORZ
+CODE_SMELL
+l
+squid:S106"9Replace this use of System.out or System.err by a logger.(‡Éà·8¯÷¤ï‚.H =RMAJORZ
+CODE_SMELL
+q
+squid:S106"9Replace this use of System.out or System.err by a logger.(õæ…¤şÿÿÿÿ8ë¨šï‚.HŸ=RMAJORZ
+CODE_SMELL

@@ -1,0 +1,15 @@
+package com.capgemini.storemanagement.dto;
+
+import lombok.Data;
+
+@Data
+public class UserInformation {
+
+	private int userId;
+	private String username;
+	private String password;
+	private String phn_no;
+	private String address;
+	private String email_id;
+	private String usertype;
+}

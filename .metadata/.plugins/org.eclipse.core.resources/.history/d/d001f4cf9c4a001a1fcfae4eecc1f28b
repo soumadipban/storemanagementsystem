@@ -1,0 +1,8 @@
+package com.capgemini.storemanagement.service;
+
+import com.capgemini.storemanagement.dto.UserInformation;
+
+public interface AdminService {
+	public UserInformation addManufacturer(UserInformation user);
+
+}

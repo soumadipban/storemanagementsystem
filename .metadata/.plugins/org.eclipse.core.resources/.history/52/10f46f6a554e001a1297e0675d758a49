@@ -1,0 +1,245 @@
+package com.capgemini.storemanagement.controller;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import org.apache.log4j.Logger;
+
+import com.capgemini.storemanagement.dao.impl.DealerDaoImpl;
+import com.capgemini.storemanagement.dao.impl.ManufacturerDaoImpl;
+import com.capgemini.storemanagement.dto.ProductInformation;
+import com.capgemini.storemanagement.dto.UserInformation;
+import com.capgemini.storemanagement.exception.IdInvalidException;
+import com.capgemini.storemanagement.exception.InvalidChoiceException;
+import com.capgemini.storemanagement.service.impl.ManufacturerServiceImpl;
+import com.capgemini.storemanagement.validation.Validations;
+
+public class ManufacturerController {
+	Scanner scan = new Scanner(System.in);
+	UserInformation dinfo = new UserInformation();
+	ProductInformation product = new ProductInformation();
+	ManufacturerServiceImpl manufacturer = new ManufacturerServiceImpl();
+	Validations valid = new Validations();
+
+	int choice = 0;
+
+	Logger log = Logger.getLogger("store");
+
+	void manufacturerTask() {
+
+		int choice = 0;
+
+		log.info("\n");
+		log.info("\t\tWelcome to Manufacturer's page");
+		log.info("\t\t1.Add Dealer Information");
+		log.info("\t\t2.Update Dealer Information");
+		log.info("\t\t3.Delete Dealer Information");
+		log.info("\t\t4.Show Dealer Information");
+		log.info("\t\t5.Add Product Detail");
+		log.info("\t\t6.Remove Product Detail");
+		log.info("\t\t7.Update Product Detail");
+		log.info("\t\t8.Show the Product Detail");
+		log.info("\t\t9.Exit");
+
+		do {
+
+			log.info("\t\t------------------------");
+			log.info("\t\tEnter Your Choice");
+			log.info("\t\t------------------------");
+			choice = scan.nextInt();
+
+			switch (choice) {
+			case 1:
+
+				log.info("Enter the DealerId");
+				scan=valid.integerValidation();
+				int dealerId = scan.nextInt();
+				dinfo.setUserId(dealerId);
+
+				log.info("Enter the Dealer Name");
+				String dealerName = scan.next();
+				dinfo.setUserName(dealerName);
+
+				log.info("Enter the Password");
+				String password = scan.next();
+				dinfo.setPassword(password);
+
+				log.info("Enter the PhoneNumber");
+				String Phn_no = scan.next();
+				dinfo.setPhn_no(Phn_no);
+
+				log.info("Enter the Address");
+				String address = scan.next();
+				dinfo.setAddress(address);
+
+				log.info("Enter the Email_Id");
+				String emailId = scan.next();
+				dinfo.setEmail_id(emailId);
+
+				manufacturer.addDealerDetail(dinfo);
+				log.info("\n");
+				log.info("Insert Succesfully");
+				break;
+
+			case 2:
+
+				UserInformation user1 = new UserInformation();
+				log.info("Enter the Dealer_ID You want to Update");
+				int id = scan.nextInt();
+
+				log.info("Enter the Dealer Name");
+				String dealername = scan.next();
+				dinfo.setUserName(dealername);
+
+				log.info("Enter the Password");
+				String pwd = scan.next();
+				dinfo.setPassword(pwd);
+
+				log.info("Enter the PhoneNumber");
+				String phn_no = scan.next();
+				dinfo.setPhn_no(phn_no);
+
+				log.info("Enter the Address");
+				String address_info = scan.next();
+				dinfo.setAddress(address_info);
+
+				log.info("Enter the Email_Id");
+				String email_Id = scan.next();
+				dinfo.setEmail_id(email_Id);
+
+				boolean flag = manufacturer.updateDealerDetail(id, dinfo);
+				if (flag) {
+					log.info("\n");
+					log.info("Record has been updated Successfully!!!");
+				} else {
+					try {
+						throw new IdInvalidException();
+					} catch (IdInvalidException e) {
+						log.info(e.getMessage());
+						manufacturerTask();
+					}
+				}
+				break;
+
+			case 3:
+				log.info("Enter the Dealer_Id You want to Delete");
+				int dealerid = scan.nextInt();
+				boolean checkDeleted = manufacturer.removeDealerDetail(dealerid);
+				if (checkDeleted) {
+					log.info("Dealer's information is deleted Succesfully");
+				} else {
+					try {
+						throw new IdInvalidException();
+					} catch (IdInvalidException e) {
+						log.info(e.getMessage());
+						manufacturerTask();
+					}
+				}
+				break;
+
+			case 4:
+				log.info("\t\t--------------Dealer's Info----------------");
+				String ResultSet = manufacturer.showDealerDetail();
+				log.info(ResultSet);
+				break;
+
+			case 5:
+
+				log.trace("*********Enter Product Detail************");
+
+				log.info("Enter the ProductId");
+				int productId = scan.nextInt();
+				product.setProductId(productId);
+
+				log.info("Enter the Product Name");
+				String productName = scan.next();
+				product.setProductName(productName);
+
+				log.info("Enter the ProductBrand");
+				String productBrand = scan.next();
+				product.setProductBrand(productBrand);
+
+				log.info("Enter the Quantity");
+				int quantity = scan.nextInt();
+				product.setQuantity(quantity);
+
+				log.info("Enter the Cost Price");
+				int cp = scan.nextInt();
+				product.setCostPrice(cp);
+
+				int sp = 0;
+				product.setSellingPrice(sp);
+
+				manufacturer.addProductDetail(product);
+				log.info("\n");
+				log.info("Insert Succesfully");
+				break;
+
+			case 6:
+				log.info("Enter the Product_Id You want to Delete");
+				int productid = scan.nextInt();
+				boolean check = manufacturer.removeProductDetai(productid);
+				if (check) {
+					log.info("Product's information is deleted Succesfully");
+				} else {
+					try {
+						throw new IdInvalidException();
+					} catch (IdInvalidException e) {
+						log.info(e.getMessage());
+						manufacturerTask();
+					}
+				}
+				break;
+
+			case 7:
+				log.info("Enter the Product_Id You want to Update");
+				int pid = scan.nextInt();
+
+				log.info("Enter the Product Name");
+				String productname = scan.next();
+				product.setProductName(productname);
+
+				log.info("Enter the Product Brand");
+				String productbrand = scan.next();
+				product.setProductBrand(productbrand);
+
+				log.info("Enter the Quantity");
+				int quantityproduct = scan.nextInt();
+				product.setQuantity(quantityproduct);
+
+				log.info("Enter the Cost Price");
+				int cost_price = scan.nextInt();
+				product.setCostPrice(cost_price);
+
+				boolean flag1 = manufacturer.updateProductDetai(pid, product);
+				if (flag1) {
+					log.info("\n");
+					log.info("Record has been updated Successfully!!!");
+				} else {
+					try {
+						throw new IdInvalidException();
+					} catch (IdInvalidException e) {
+						log.info(e.getMessage());
+						manufacturerTask();
+					}
+				}
+				break;
+			case 8:
+				log.info("\t\t--------------Product's Info----------------");
+				String productResult = manufacturer.showProductDetai();
+				log.info(productResult);
+				break;
+
+			default:
+				try {
+					if (choice > 9)
+						throw new InvalidChoiceException("Invalid choice");
+				} catch (InvalidChoiceException e) {
+					log.info(e.getMessage());
+					manufacturerTask();
+				}
+
+			}
+		} while (choice != 9);
+	}
+}

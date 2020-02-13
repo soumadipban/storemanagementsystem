@@ -1,0 +1,13 @@
+package com.capgemini.storemanagement.dto;
+
+import lombok.Data;
+
+@Data
+public class ManufacturerInformation {
+
+	private int manufacturerId;
+	private String manufacturerName;
+	private String manufacturerAddress;
+	private String phoneNo;
+	private String emailId;
+}

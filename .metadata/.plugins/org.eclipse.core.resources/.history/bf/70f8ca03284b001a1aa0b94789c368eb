@@ -1,0 +1,7 @@
+package com.capgemini.storemanagement.controller;
+
+public class TestClass {
+public static void main(String[] args) {
+	
+}
+}

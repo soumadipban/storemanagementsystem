@@ -1,0 +1,12 @@
+package com.capgemini.storemanagement.dao;
+
+public interface AdminDao {
+	
+	public boolean addManufactural(ManufacturerInformation manufacturer);
+	
+	void modifyManufactural();
+	
+	void deleteManufactural();
+	
+	void showManufactural();
+}

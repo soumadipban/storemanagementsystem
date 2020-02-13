@@ -1,0 +1,15 @@
+package com.capgemini.storemanagement.dto;
+
+import lombok.Data;
+
+@Data
+public class ProductInformation {
+
+	private int productId;
+	private String productName;
+	private String productBrand;
+	private int quantity;
+	private int costPrice;
+	private int sellingPrice;
+	
+}

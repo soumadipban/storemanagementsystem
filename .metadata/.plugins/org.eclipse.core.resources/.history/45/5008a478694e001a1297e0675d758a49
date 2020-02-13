@@ -1,0 +1,14 @@
+package com.capgemini.storemanagement.exception;
+
+public class InvalidChoiceException extends RuntimeException {
+	String msg = "Invalid Choice";
+	
+	public InvalidChoiceException(String info) {
+		super(info);
+	}
+	@Override
+	public String getMessage() {
+		
+		return this.msg;
+	}
+}

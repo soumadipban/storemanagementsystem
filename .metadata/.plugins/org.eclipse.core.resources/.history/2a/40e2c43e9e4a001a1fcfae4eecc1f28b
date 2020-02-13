@@ -1,0 +1,15 @@
+package com.capgemini.storemanagement.service.impl;
+
+import com.capgemini.storemanagement.dao.AdminDao;
+import com.capgemini.storemanagement.dto.UserInformation;
+import com.capgemini.storemanagement.service.AdminService;
+
+public class AdminServiceImpl implements AdminService {
+
+	AdminDao dao;
+	public void addManufacturer(UserInformation user) {
+		dao.addManufacturer(user);
+		
+	}
+
+}

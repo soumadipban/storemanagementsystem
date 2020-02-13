@@ -1,0 +1,17 @@
+package com.capgemini.storemanagement.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.capgemini.storemanagement.dto.DealerSellingStockInfomation;
+import com.capgemini.storemanagement.dto.OrderInformation;
+import com.capgemini.storemanagement.dto.ProductInformation;
+
+
+public interface DealerDao {
+	
+	public void orderProduct(int id,OrderInformation order,DealerSellingStockInfomation stock);
+	public void changePriceOfProduct(int productId);
+	public int returnProductId(String productName);
+
+}

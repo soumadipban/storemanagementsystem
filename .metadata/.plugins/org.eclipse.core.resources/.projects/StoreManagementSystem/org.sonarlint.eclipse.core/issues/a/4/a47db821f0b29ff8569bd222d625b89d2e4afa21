@@ -1,0 +1,33 @@
+
+€squid:S3973T"IUse indentation to denote the code conditionally executed by this "else".(ÔÍØ8’¡¾óƒ.H›ARCRITICALZ
+CODE_SMELL
+squid:S3973‚"IUse indentation to denote the code conditionally executed by this "else".(ÔÍØ8’¡¾óƒ.HœARCRITICALZ
+CODE_SMELL
+csquid:S5411="*Use the primitive boolean expression here.(™ÆÃèøÿÿÿÿ8ª­áòƒ.HARMINORZ
+CODE_SMELL
+‡squid:S00117ˆ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªÆŞ¾8İÒãù‚.HARMINORZ
+CODE_SMELL
+squid:S3776"SRefactor this method to reduce its Cognitive Complexity from 105 to the 15 allowed.(”ÎÁ–ùÿÿÿÿ8©¨´òƒ.HŸARCRITICALZ
+CODE_SMELL
+~squid:HiddenFieldCheck":Rename "choice" which hides the field declared at line 23.(ÖİÃ¹ùÿÿÿÿ8œ˜ê¤‚.H ARMAJORZ
+CODE_SMELL
+€squid:S3973J"IUse indentation to denote the code conditionally executed by this "else".(ÔÍØ8’¡¾óƒ.H¡ARCRITICALZ
+CODE_SMELL
+€squid:S3973b"IUse indentation to denote the code conditionally executed by this "else".(ÔÍØ8’¡¾óƒ.H¢ARCRITICALZ
+CODE_SMELL
+‡squid:S00117¿"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òêà™8©Ìóù‚.H£ARMINORZ
+CODE_SMELL
+Œsquid:S00117„"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼à®ùÿÿÿÿ8çæ¯–ƒ.H¤ARMINORZ
+CODE_SMELL
+^squid:S5411t"*Use the primitive boolean expression here.(ÅÕÍ×8’¡¾óƒ.H¥ARMINORZ
+CODE_SMELL
+€squid:S3973@"IUse indentation to denote the code conditionally executed by this "else".(ÔÍØ8’¡¾óƒ.H¦ARCRITICALZ
+CODE_SMELL
+‡squid:S00117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Øê…Ô8İÒãù‚.H§ARMINORZ
+CODE_SMELL
+squid:CommentedOutCodeLinem"<This block of commented-out lines of code should be removed.(ÅºÌá8”ÄÛôƒ.H¨ARMAJORZ
+CODE_SMELL
+‹squid:S00117P"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀòˆÆùÿÿÿÿ8¸†»Ò‚.H©ARMINORZ
+CODE_SMELL
+‡squid:S00117’"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ¼„8İÒãù‚.HªARMINORZ
+CODE_SMELL

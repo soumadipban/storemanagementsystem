@@ -1,0 +1,15 @@
+package com.capgemini.storemanagement.dao;
+
+import java.util.List;
+
+import com.capgemini.storemanagement.dto.ProductInformation;
+
+
+public interface DealerDao {
+	
+	public void addProduct(ProductInformation product);
+	public void removeProduct(int ProductId);
+	public void updateProduct(int productId);
+	public List<ProductInformation> showProductInfo();
+
+}

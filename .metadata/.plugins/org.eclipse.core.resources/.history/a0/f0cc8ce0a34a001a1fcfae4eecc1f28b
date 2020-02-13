@@ -1,0 +1,14 @@
+package com.capgemini.storemanagement.exception;
+
+public class UserNotFoundException extends Exception {
+	String msg = "Invalid UserName Or Password";
+	
+	public UserNotFoundException(String msg) {
+		this.msg = msg;
+	}
+	
+	@Override
+	public String getMessage() {
+		return this.msg;
+	}
+}

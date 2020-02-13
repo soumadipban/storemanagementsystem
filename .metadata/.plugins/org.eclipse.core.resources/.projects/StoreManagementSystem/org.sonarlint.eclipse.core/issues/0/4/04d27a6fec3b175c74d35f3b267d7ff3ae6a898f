@@ -1,0 +1,52 @@
+
+_squid:S1148V"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8®“Æêƒ.H­ARMINORZVULNERABILITY
+_squid:S1148."#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¼İúêƒ.H®ARMINORZVULNERABILITY
+{squid:HiddenFieldCheck7"7Rename "con" which hides the field declared at line 16.(îŞ—°ûÿÿÿÿ8ïĞÈêƒ.H¯ARMAJORZ
+CODE_SMELL
+zsquid:HiddenFieldCheckr"6Rename "ps" which hides the field declared at line 17.(Ñ‚¼õúÿÿÿÿ8øƒëƒ.H°ARMAJORZ
+CODE_SMELL
+`squid:S1148‹"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¼İúêƒ.H±ARMINORZVULNERABILITY
+{squid:HiddenFieldCheckª"6Rename "ps" which hides the field declared at line 17.(àø„˜úÿÿÿÿ8ªğşêƒ.H²ARMAJORZ
+CODE_SMELL
+{squid:HiddenFieldCheck#"7Rename "con" which hides the field declared at line 16.(îŞ—°ûÿÿÿÿ8ÉÊêƒ.H³ARMAJORZ
+CODE_SMELL
+zsquid:HiddenFieldCheck$"6Rename "ps" which hides the field declared at line 17.(Ñ‚¼õúÿÿÿÿ8¬ÄÌêƒ.H´ARMAJORZ
+CODE_SMELL
+{squid:HiddenFieldCheckq"7Rename "con" which hides the field declared at line 16.(îŞ—°ûÿÿÿÿ8øƒëƒ.HµARMAJORZ
+CODE_SMELL
+|squid:HiddenFieldCheck©"7Rename "con" which hides the field declared at line 16.(îŞ—°ûÿÿÿÿ8¬ÄÌêƒ.H¶ARMAJORZ
+CODE_SMELL
+{squid:HiddenFieldCheck•"6Rename "ps" which hides the field declared at line 17.(Ñ‚¼õúÿÿÿÿ8ïĞÈêƒ.H·ARMAJORZ
+CODE_SMELL
+Vsquid:S1643­"Use a StringBuilder instead.(—¸éüÿÿÿÿ8®“Æêƒ.H¸ARMINORZ
+CODE_SMELL
+zsquid:HiddenFieldCheckK"6Rename "ps" which hides the field declared at line 17.(Ñ‚¼õúÿÿÿÿ8¼İúêƒ.H¹ARMAJORZ
+CODE_SMELL
+_squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8®“Æêƒ.HºARMINORZVULNERABILITY
+|squid:HiddenFieldCheckƒ"7Rename "con" which hides the field declared at line 16.(îŞ—°ûÿÿÿÿ8¾’öêƒ.H»ARMAJORZ
+CODE_SMELL
+{squid:HiddenFieldCheck«"6Rename "rs" which hides the field declared at line 18.(Ê´¢èüÿÿÿÿ8øƒëƒ.H¼ARMAJORZ
+CODE_SMELL
+_squid:S1148{"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¼İúêƒ.H½ARMINORZVULNERABILITY
+`squid:S1148Ÿ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8®“Æêƒ.H¾ARMINORZVULNERABILITY
+vsquid:HiddenFieldCheck„"6Rename "ps" which hides the field declared at line 17.(´ÂÒ…8ÉÊêƒ.H¿ARMAJORZ
+CODE_SMELL
+|squid:HiddenFieldCheck”"7Rename "con" which hides the field declared at line 16.(îŞ—°ûÿÿÿÿ8ªğşêƒ.HÀARMAJORZ
+CODE_SMELL
+_squid:S1148?"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8­ƒ•ƒ.HÁARMINORZVULNERABILITY
+usquid:HiddenFieldCheck8"6Rename "ps" which hides the field declared at line 17.(´ÂÒ…8¾’öêƒ.HÂARMAJORZ
+CODE_SMELL
+{squid:HiddenFieldCheck`"7Rename "con" which hides the field declared at line 16.(îŞ—°ûÿÿÿÿ8¼İúêƒ.HÃARMAJORZ
+CODE_SMELL
+Psquid:S1643d"Use a StringBuilder instead.(­©Ÿ8¼İúêƒ.HÄARMINORZ
+CODE_SMELL
+`squid:S1148´"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¼İúêƒ.HÅARMINORZVULNERABILITY
+_squid:S1148j"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8®“Æêƒ.HÆARMINORZVULNERABILITY
+zsquid:HiddenFieldCheckb"6Rename "rs" which hides the field declared at line 18.(Ê´¢èüÿÿÿÿ8²òêƒ.HÇARMAJORZ
+CODE_SMELL
+‚squid:S1192#"FDefine a constant instead of duplicating this literal "dburl" 8 times.(îŞ—°ûÿÿÿÿ8¬ÄÌêƒ.HÈARCRITICALZ
+CODE_SMELL
+{squid:HiddenFieldCheckJ"7Rename "con" which hides the field declared at line 16.(îŞ—°ûÿÿÿÿ8ÅÖïêƒ.HÉARMAJORZ
+CODE_SMELL
+zsquid:HiddenFieldChecka"6Rename "ps" which hides the field declared at line 17.(àø„˜úÿÿÿÿ8ÅÖïêƒ.HÊARMAJORZ
+CODE_SMELL

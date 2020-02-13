@@ -1,0 +1,13 @@
+package com.capgemini.storemanagement.service;
+
+import java.util.ArrayList;
+
+import com.capgemini.storemanagement.dto.OrderInformation;
+import com.capgemini.storemanagement.dto.ProductInformation;
+
+public interface DealerService {
+
+	public void orderProduct(OrderInformation order);
+	public void changePriceOfProduct(int productId);
+
+}

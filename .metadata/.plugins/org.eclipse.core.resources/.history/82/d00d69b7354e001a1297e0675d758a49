@@ -1,0 +1,17 @@
+package com.capgemini.storemanagement.service.impl;
+
+import org.junit.Test;
+
+import junit.framework.TestCase;
+
+public class AdminServiceImplTest extends TestCase {
+	AdminServiceImpl service = new AdminServiceImpl();
+	
+	@Test
+	public void test() {
+		service.showManufacturer();
+	}
+	
+	
+
+}

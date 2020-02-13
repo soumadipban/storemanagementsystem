@@ -1,0 +1,20 @@
+package com.capgemini.storemanager.util;
+
+import java.util.Scanner;
+
+import org.mindrot.jbcrypt.BCrypt;
+
+public class PasswordValidator {
+	
+	public static void PasswordValidation(String plainPassword,String hashPassword) {
+		BCrypt.checkpw(plainPassword,hashPassword);
+	}
+	public static void main(String[] args) {
+		Scanner scan  = new Scanner(System.in);
+		Sting plainPassword  = scan.nextLine();
+		System.out.println("Enter the password to be encoded");
+		String hashPassword = PasswordEncoder.passwordEncoder(plainPassword);
+		System.out.println(hashPassword);
+		
+	}
+}

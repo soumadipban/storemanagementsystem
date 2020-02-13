@@ -1,0 +1,7 @@
+package com.capgemini.storemanagement.service;
+
+import junit.framework.TestCase;
+
+public class AdminServiceTest extends TestCase {
+Admin
+}

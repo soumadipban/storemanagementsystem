@@ -1,0 +1,109 @@
+package com.capgemini.storemanagement.validation;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
+public class ValidateCheck {
+	
+	
+	static Logger log = LogManager.getLogger("store");
+	
+	public static boolean validPassword(String pwd) {
+		if (!((pwd.length() >= 8) && (pwd.length() <= 15))) {
+			return false;
+		}
+
+		if (pwd.contains(" ")) {
+			return false;
+		}
+
+		if (true) {
+			int count = 0;
+			for (int i = 0; i <= 9; i++) {
+
+				String str1 = Integer.toString(i);
+
+				if (pwd.contains(str1)) {
+					count = 1;
+				}
+			}
+			if (count == 0) {
+				return false;
+			}
+		}
+
+		if (!(pwd.contains("@") || pwd.contains("#") || pwd.contains("!") || pwd.contains("~") || pwd.contains("$")
+				|| pwd.contains("%") || pwd.contains("^") || pwd.contains("&") || pwd.contains("*") || pwd.contains("(")
+				|| pwd.contains(")") || pwd.contains("-") || pwd.contains("+") || pwd.contains("/") || pwd.contains(":")
+				|| pwd.contains(".") || pwd.contains(", ") || pwd.contains("<") || pwd.contains(">")
+				|| pwd.contains("?") || pwd.contains("|"))) {
+			return false;
+		}
+
+		if (true) {
+			int count = 0;
+
+			for (int i = 65; i <= 90; i++) {
+				char c = (char) i;
+
+				String str1 = Character.toString(c);
+				if (pwd.contains(str1)) {
+					count = 1;
+				}
+			}
+			if (count == 0) {
+				return false;
+			}
+		}
+
+		if (true) {
+			int count = 0;
+
+			for (int i = 90; i <= 122; i++) {
+
+				char c = (char) i;
+				String str1 = Character.toString(c);
+
+				if (pwd.contains(str1)) {
+					count = 1;
+				}
+			}
+			if (count == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public static boolean emailValidation(String email) {
+		Pattern pattern;
+		final String EMAIL_PATTERN = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z"
+				+ "A-Z]{2,7}$";
+		pattern = Pattern.compile(EMAIL_PATTERN);
+		if (email == null) {
+			return false;
+		} else {
+			return pattern.matcher(email).matches();
+		}
+
+	}
+	
+	public static boolean validContact(String contact) {
+		Pattern p = Pattern.compile("(0/91)?[7-9][0-9]{9}");
+		Matcher m = p.matcher(contact);
+		return (m.find() && m.group().equals(contact));
+	}//
+
+	/*public static void main(String[] args) {
+		 String contact ="9876543210";
+		 if (validContact(contact)) {
+			 log.info("Valid Number");
+		 } else {
+			 log.info("Invalid Number");
+		 }         
+	}*/
+			
+}

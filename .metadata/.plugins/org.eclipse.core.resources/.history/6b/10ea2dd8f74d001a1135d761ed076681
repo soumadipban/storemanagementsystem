@@ -1,0 +1,30 @@
+package com.capgemini.airlinereservationsystem.validations;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
+public class ValidateContact {
+	/*static Logger log = LogManager.getLogger("User");
+
+	public static boolean validContact(String contact) {
+		Pattern p = Pattern.compile("(0/91)?[7-9][0-9]{9}");
+		Matcher m = p.matcher(contact);
+		return (m.find() && m.group().equals(contact));
+	}*/
+
+	public static void main(String[] args) {
+		/*		 String contact ="9876543210";
+		 if (validContact(contact)) {
+			 log.info("Valid Number");
+		 } else {
+			 log.info("Invalid Number");
+		 }  */   
+
+		String name = "Soumadip";
+		int a = Integer.parseInt(name);
+		System.out.println(a);
+	}
+}

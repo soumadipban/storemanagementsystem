@@ -1,0 +1,5 @@
+package com.capgemini.storemanager.util;
+
+public class PasswordEncoder {
+
+}

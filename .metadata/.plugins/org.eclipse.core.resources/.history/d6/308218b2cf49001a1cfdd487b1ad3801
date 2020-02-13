@@ -1,0 +1,43 @@
+package com.capgemini.controller.module;
+
+import java.util.Scanner;
+
+public class StoreManagementController {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("1.Admin");
+		System.out.println("2.Manufacture");
+		System.out.println("3.Dealer");
+		System.out.println("4.Exit");
+
+		int choice = sc.nextInt();
+
+		do {
+			
+			System.out.println("------------------------");
+			System.out.println("Enter Your Choice");
+			System.out.println("------------------------");
+			switch (choice) {
+			case 1:
+				
+				int count=0;
+				while(count<1) {
+				System.out.println("Enter Your Name:");
+				String name = sc.next();
+				System.out.println("Enter Your Password:");
+				String password = sc.next();
+				count++;
+				}
+				break;
+				
+			case 2:
+				
+				//Something there
+			}
+		}while(choice!=4);
+
+	}
+
+}

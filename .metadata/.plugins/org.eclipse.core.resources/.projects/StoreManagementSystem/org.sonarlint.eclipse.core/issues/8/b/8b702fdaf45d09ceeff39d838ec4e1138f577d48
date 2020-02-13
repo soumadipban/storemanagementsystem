@@ -1,0 +1,49 @@
+
+qsquid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Ó¡­î‚.H‡ARMINORZ
+CODE_SMELL
+€squid:S39734"IUse indentation to denote the code conditionally executed by this "else".(ÔÍØ8ğç™ôƒ.Hÿ@RCRITICALZ
+CODE_SMELL
+‚squid:S1192*"FDefine a constant instead of duplicating this literal "dburl" 5 times.(îŞ—°ûÿÿÿÿ8µîŞéƒ.H…ARCRITICALZ
+CODE_SMELL
+_squid:S1148#"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ôˆ€©‚.Hù@RMINORZVULNERABILITY
+_squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ø¸©èƒ.H€ARMINORZVULNERABILITY
+{squid:HiddenFieldCheckR"7Rename "con" which hides the field declared at line 22.(îŞ—°ûÿÿÿÿ8Àæ¬èƒ.HˆARMAJORZ
+CODE_SMELL
+_squid:S1148n"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8÷çÂÂ‚.Hû@RMINORZVULNERABILITY
+Psquid:S1643z"Use a StringBuilder instead.(­©Ÿ8˜ÇÅî‚.HARMINORZ
+CODE_SMELL
+usquid:HiddenFieldCheckh"6Rename "ps" which hides the field declared at line 23.(´ÂÒ…8áÁÕéƒ.H“ARMAJORZ
+CODE_SMELL
+psquid:UselessImportCheck	"/Remove this unused import 'java.sql.Statement'.(ÏÖÔø8¥×Ãêƒ.Hş@RMINORZ
+CODE_SMELL
+zsquid:HiddenFieldCheckw"6Rename "ps" which hides the field declared at line 23.(àø„˜úÿÿÿÿ8µîŞéƒ.H‹ARMAJORZ
+CODE_SMELL
+_squid:S1148]"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ø…¯Å‚.Hú@RMINORZVULNERABILITY
+ssquid:UselessImportCheck"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8÷çÂÂ‚.HŠARMINORZ
+CODE_SMELL
+{squid:HiddenFieldCheckv"7Rename "con" which hides the field declared at line 22.(îŞ—°ûÿÿÿÿ8‹‡üéƒ.HARMAJORZ
+CODE_SMELL
+zsquid:HiddenFieldCheckx"6Rename "rs" which hides the field declared at line 24.(Ê´¢èüÿÿÿÿ8¦¤êƒ.Hı@RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine/"<This block of commented-out lines of code should be removed.(£¹×8‡ÀÍëƒ.HƒARMAJORZ
+CODE_SMELL
+usquid:HiddenFieldCheck-"6Rename "rs" which hides the field declared at line 24.(ÃËâ«8Àæ¬èƒ.HŒARMAJORZ
+CODE_SMELL
+zsquid:HiddenFieldCheckA"6Rename "ps" which hides the field declared at line 23.(Ñ‚¼õúÿÿÿÿ8Àæ¬èƒ.Hü@RMAJORZ
+CODE_SMELL
+{squid:HiddenFieldCheckg"7Rename "con" which hides the field declared at line 22.(îŞ—°ûÿÿÿÿ8¦¤êƒ.H‘ARMAJORZ
+CODE_SMELL
+_squid:S1148J"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8÷çÂÂ‚.H’ARMINORZVULNERABILITY
+{squid:HiddenFieldCheck*"7Rename "con" which hides the field declared at line 22.(îŞ—°ûÿÿÿÿ8áÁÕéƒ.HARMAJORZ
+CODE_SMELL
+zsquid:HiddenFieldCheck+"6Rename "ps" which hides the field declared at line 23.(Ñ‚¼õúÿÿÿÿ8¦¤êƒ.HARMAJORZ
+CODE_SMELL
+{squid:HiddenFieldCheck@"7Rename "con" which hides the field declared at line 22.(îŞ—°ûÿÿÿÿ8µîŞéƒ.H†ARMAJORZ
+CODE_SMELL
+csquid:S1481H"*Remove this unused "count" local variable.(ÿÕ¸œúÿÿÿÿ8Ä÷»Å‚.H„ARMINORZ
+CODE_SMELL
+zsquid:HiddenFieldCheckS"6Rename "ps" which hides the field declared at line 23.(Ñ‚¼õúÿÿÿÿ8‹‡üéƒ.H‚ARMAJORZ
+CODE_SMELL
+qsquid:UselessImportCheck
+"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Ó¡­î‚.HARMINORZ
+CODE_SMELL

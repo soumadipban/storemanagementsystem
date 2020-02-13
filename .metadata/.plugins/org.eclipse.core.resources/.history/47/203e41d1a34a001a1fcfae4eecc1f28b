@@ -1,0 +1,17 @@
+package com.capgemini.storemanagement.dao;
+
+
+import com.capgemini.storemanagement.dto.UserInformation;
+
+public interface AdminDao {
+	
+	public boolean login(String name, String password);
+	
+	public boolean addManufacturer(UserInformation user);
+	
+	void modifyManufacturer();
+	
+	void deleteManufacturer();
+	
+	void showManufacturer();
+}

@@ -1,0 +1,7 @@
+
+rsquid:S1854*"9Remove this useless assignment to local variable "count".(ëæûÿÿÿÿÿ8¹°…Éƒ.HÛ@RMAJORZ
+CODE_SMELL
+‰squid:S3776"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(Çµí‘8şª†Çƒ.HÜ@RCRITICALZ
+CODE_SMELL
+p"squid:SwitchLastCaseIsDefaultCheck&""Add a default case to this switch.(¨ÕÉ8‹«òëƒ.Hİ@RCRITICALZ
+CODE_SMELL

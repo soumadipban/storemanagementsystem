@@ -1,0 +1,15 @@
+package com.capgemini.storemanagement.validation;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
+public class ValidateCheck {
+	
+	static Logger log = new LogManager().getLogger("store");
+	
+	public static boolean passwordValidator(String inputAdminName, String inputAdminPassword) {
+		return false;
+		
+	}
+			
+}

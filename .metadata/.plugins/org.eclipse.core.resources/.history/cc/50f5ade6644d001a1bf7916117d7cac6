@@ -1,0 +1,21 @@
+package com.capgemini.storemanager.util;
+
+import java.util.Scanner;
+
+import org.mindrot.jbcrypt.BCrypt;
+
+public class PasswordEncoder {
+	public static String passwordEncoder(String pwd) {
+		return BCrypt.hashpw(pwd, BCrypt.gensalt());//2nd arg is generated some salt
+		
+	}
+	
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the password to be encoded...");
+		String pwd = scan.nextLine();
+		String password =  PasswordEncoder.passwordEncoder(pwd);
+		System.out.println(password);
+		scan.close();
+	}
+}

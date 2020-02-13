@@ -1,0 +1,240 @@
+package com.capgemini.storemanagement.controller;
+
+import java.util.Scanner;
+
+import org.apache.log4j.Logger;
+
+
+import com.capgemini.storemanagement.dto.UserInformation;
+import com.capgemini.storemanagement.service.impl.AdminServiceImpl;
+import com.capgemini.storemanagement.service.impl.DealerServiceImpl;
+import com.capgemini.storemanagement.validation.Validations;
+
+public class AdminController {
+	/*
+	 * AdminServiceImpl adminservice = new AdminServiceImpl(); DealerServiceImpl
+	 * dealerservice = new DealerServiceImpl(); AdminDaoImpl adminservice = new
+	 * AdminDaoImpl(); DealerServiceImpl dealerservice = new DealerServiceImpl();
+	 */
+	Validations valid = new Validations();
+
+	AdminServiceImpl service = new AdminServiceImpl();
+	DealerServiceImpl dealerservice = new DealerServiceImpl();
+
+	Scanner scan = new Scanner(System.in);
+	// AdminDaoImpl ad = new AdminDaoImpl();
+	int choice = 0;
+
+	Logger log = Logger.getLogger("store");
+
+	void adminTask() {
+
+		int choice = 0;
+
+		log.info("\n");
+		log.info("\t\tWelcome to Admin's Page");
+		log.info("\t\t1.Add Manufacturer Detail");
+		log.info("\t\t2.Update Manufacturer Information");
+		log.info("\t\t3.Delete Manufacturer Detail");
+		log.info("\t\t4.Show the Manufacturer Detail");
+		log.info("\t\t5.Exit");
+
+		do {
+
+			log.info("\t\t------------------------");
+			log.info("\t\tEnter Your Choice");
+			log.info("\t\t------------------------");
+			choice = scan.nextInt();
+
+			switch (choice) {
+
+			case 1:
+
+				UserInformation user = new UserInformation();
+
+				log.info("Enter the UserId");
+				scan = valid.integerValidation();
+				int userId = scan.nextInt();
+				user.setUserId(userId);
+
+				while (true) {
+					log.info("Enter the Username");
+					String userName = scan.next();
+
+					boolean checkName = valid.userNameValidation(userName);
+					if (checkName) {
+						user.setUserName(userName);
+						break;
+					} else
+						log.info("Invalid");
+				}
+				while (true) {
+					log.info("Enter the Password");
+					String passWord = scan.next();
+					boolean flag = service.passwordValidate(passWord);
+					if (flag) {
+						String pwd = service.generatePassword(passWord);
+						user.setPassword(pwd);
+						break;
+					} else {
+						log.info("\n");
+						log.info("Password is invalid!!Please try again ");
+					}
+
+				}
+
+				log.info("\n");
+
+				while (true) {
+					log.info("Enter the Phone Number");
+					String phn_no = scan.next();
+					boolean flag = service.contactValidate(phn_no);
+					if (flag) {
+						user.setPhn_no(phn_no);
+						break;
+					} else {
+						log.info("\n");
+						log.info("Phone Number is Not valid");
+					}
+				}
+
+				log.info("\n");
+
+				log.info("Enter the Address");
+				String address = scan.next();
+				user.setAddress(address);
+
+				log.info("\n");
+
+				while (true) {
+					log.info("Enter the email_id");
+					String email_id = scan.next();
+					boolean flag = service.emailValidate(email_id);
+					user.setEmail_id(email_id);
+					if (flag) {
+						user.setEmail_id(email_id);
+						break;
+					} else {
+						log.info("\n");
+						log.info("Email Id is Not valid");
+					}
+				}
+
+				/*
+				 * log.info("Enter the UserType"); String UserType = scan.next();
+				 * user.setUsertype(UserType);
+				 */
+
+				// adminservice.addManufacturer(user);
+				service.addManufacturer(user);
+				log.info("\n");
+				log.info("Insert Succesfully");
+				break;
+
+			case 2:
+				UserInformation user1 = new UserInformation();
+				log.info("Enter the User_ID You want to Update");
+				int id = scan.nextInt();
+
+				while (true) {
+					log.info("Enter the Username");
+					String name = scan.next();
+
+					boolean checkName = valid.userNameValidation(name);
+					if (checkName) {
+						user1.setUserName(name);
+						break;
+					} else
+						log.info("Invalid");
+				}
+
+				while (true) {
+					log.info("Enter the Password");
+					String passWord = scan.next();
+					boolean flag = service.passwordValidate(passWord);
+					if (flag) {
+						String pwd = service.generatePassword(passWord);
+						user1.setPassword(pwd);
+						break;
+					} else {
+						log.info("\n");
+						log.info("Password is invalid!!Please try again ");
+					}
+
+				}
+
+				log.info("\n");
+
+				while (true) {
+					log.info("Enter the Phone Number");
+					String phn_no = scan.next();
+					boolean flag = service.contactValidate(phn_no);
+					if (flag) {
+						user1.setPhn_no(phn_no);
+						break;
+					} else {
+						log.info("\n");
+						log.info("Phone Number is Not valid");
+					}
+				}
+
+				log.info("\n");
+
+				log.info("Enter the Address");
+				String address1 = scan.next();
+				user1.setAddress(address1);
+
+				while (true) {
+					log.info("Enter the email_id");
+					String email_id = scan.next();
+					boolean flag = service.emailValidate(email_id);
+					user1.setEmail_id(email_id);
+					if (flag) {
+						user1.setEmail_id(email_id);
+						break;
+					} else {
+						log.info("\n");
+						log.info("Email Id is Not valid");
+					}
+				}
+				
+				boolean checkUpdate = service.modifyManufacturer(id, user1);
+				if(checkUpdate)
+					log.info("User_Id is Updated Succesfully");
+				else
+					log.info("UserId Not Found");
+				log.info("\n");
+				log.info("Record has been updated Successfully!!!");
+
+				break;
+
+			case 3:
+				log.info("Enter the User_Id You want to Delete");
+				int userid = scan.nextInt();
+				boolean checkId = service.deleteManufacturer(userid);
+				if (checkId)
+					log.info("User_Id is deleted Succesfully");
+				else
+					log.info("UserId Not Found");
+				break;
+
+			case 4:
+				log.info("\t\t--------------Manufacturer's Info----------------");
+				String ResultSet = service.showManufacturer();
+				log.info(ResultSet);
+				break;
+
+			/*
+			 * case 5: System.exit(0); break; default:
+			 * 
+			 * log.info("Invalid Character!!!Try Again"); adminTask();
+			 */
+
+			}
+		} while (choice != 5);
+		
+		scan.close();
+	}
+	
+
+}

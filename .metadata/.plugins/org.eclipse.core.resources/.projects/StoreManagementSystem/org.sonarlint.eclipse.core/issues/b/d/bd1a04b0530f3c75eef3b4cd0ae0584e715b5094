@@ -1,0 +1,15 @@
+
+gsquid:S2209"5Change this instance-reference to a static reference.(Şğ›üÿÿÿÿHÉ7RMAJORZ
+CODE_SMELL
+‚squid:S3776"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(€ßñ£HÊ7RCRITICALZ
+CODE_SMELL
+}squid:CommentedOutCodeLinei"<This block of commented-out lines of code should be removed.(õ–ôÄùÿÿÿÿHË7RMAJORZ
+CODE_SMELL
+_squid:S1068"+Remove this unused "matcher" private field.(¥½³Ú8«ô¾Íƒ.HÌ7RMAJORZ
+CODE_SMELL
+^squid:S1481W",Remove this unused "matcher" local variable.( ãÅÄşÿÿÿÿHÍ7RMINORZ
+CODE_SMELL
+\squid:S2440"*Remove this instantiation of "LogManager".(Şğ›üÿÿÿÿHÎ7RMAJORZ
+CODE_SMELL
+_squid:S1068"+Remove this unused "pattern" private field.(¬ğ8«ô¾Íƒ.HÏ7RMAJORZ
+CODE_SMELL

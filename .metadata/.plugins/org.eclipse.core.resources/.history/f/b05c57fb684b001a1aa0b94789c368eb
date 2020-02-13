@@ -1,0 +1,36 @@
+package com.capgemini.storemanagement.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.capgemini.storemanagement.dao.AdminDao;
+import com.capgemini.storemanagement.dao.impl.AdminDaoImpl;
+import com.capgemini.storemanagement.dto.ManufacturerInformation;
+import com.capgemini.storemanagement.dto.UserInformation;
+import com.capgemini.storemanagement.service.AdminService;
+
+public class AdminServiceImpl implements AdminService {
+	AdminDao dao;
+	
+	public void addManufacturer(UserInformation user) {
+		dao.addManufacturer(user);	
+	}
+	
+	public void login(String name, String password) {
+		dao.login(name, password);
+	}
+
+	public void modifyManufacturer(int userId) {
+		dao.modifyManufacturer(userId);
+	}
+
+	public void deleteManufacturer(int userId) {
+		dao.deleteManufacturer(userId);
+	}
+
+	public ArrayList<Object> showManufacturer() {
+		dao.showManufacturer();
+		return null;
+	}
+	
+}

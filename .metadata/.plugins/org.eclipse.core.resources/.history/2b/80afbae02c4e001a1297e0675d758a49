@@ -1,0 +1,5 @@
+package com.capgemini.storemanagement.exception;
+
+public class IdInvalidException extends RuntimeException {
+
+}

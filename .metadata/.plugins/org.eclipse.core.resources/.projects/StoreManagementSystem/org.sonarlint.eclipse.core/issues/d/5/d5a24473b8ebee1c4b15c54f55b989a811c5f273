@@ -1,0 +1,8 @@
+
+squid:S2068"V'PASSWORD' detected in this expression, review this potentially hard-coded credential.(ÂÕš8¸ÑËåƒ.HÑ7RBLOCKERZVULNERABILITY
+rsquid:S2696"6Make the enclosing method "static" or remove this set.(¥šöèüÿÿÿÿ8¸ÑËåƒ.HÒ7RCRITICALZ
+CODE_SMELL
+usquid:S11265"AReplace this if-then-else statement by a single return statement.(ûŽäï8¸ÑËåƒ.HÓ7RMINORZ
+CODE_SMELL
+usquid:S1126>"AReplace this if-then-else statement by a single return statement.(ý…²³8¸ÑËåƒ.HÔ7RMINORZ
+CODE_SMELL

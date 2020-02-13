@@ -1,0 +1,31 @@
+package com.capgemini.storemanagement.service.impl;
+
+import java.util.ArrayList;
+
+import com.capgemini.storemanagement.dao.DealerDao;
+import com.capgemini.storemanagement.dto.ProductInformation;
+import com.capgemini.storemanagement.service.DealerService;
+
+public class DealerServiceImpl implements DealerService {
+
+	static DealerDao dao;
+	public void addProduct(ProductInformation product) {
+		dao.addProduct(product);
+	}
+
+	public void removeProduct(int productId) {
+		dao.removeProduct(productId);
+		
+	}
+
+	public void updateProduct(int productId) {
+		dao.updateProduct(productId);
+		
+	}
+
+	public ArrayList<Object> showProductInfo() {
+		dao.showProductInfo();
+		return null;
+	}
+
+}

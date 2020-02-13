@@ -1,0 +1,188 @@
+package com.capgemini.storemanagement.dao.impl;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.capgemini.storemanagement.dao.ManufacturerDao;
+import com.capgemini.storemanagement.dto.ProductInformation;
+import com.capgemini.storemanagement.dto.UserInformation;
+
+public class ManufacturerDaoImpl implements ManufacturerDao {
+
+	Connection con = null;
+	PreparedStatement ps = null;
+	ResultSet rs = null;
+
+	public void addDealerDetail(UserInformation user) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			String str = "insert into user_info values(?,?,?,?,?,?,'dealer')";
+			ps = con.prepareStatement(str);
+			ps.setInt(1,user.getUserId());
+			ps.setString(2,user.getUserName());
+			ps.setString(3,user.getPassword());
+			ps.setString(4,user.getPhn_no());
+			ps.setString(5,user.getAddress());
+			ps.setString(6,user.getEmail_id());
+			int count = ps.executeUpdate();
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+
+		finally {
+			try {
+				if(con!=null) {
+					con.close();
+
+				}
+
+				if(ps!=null) {
+					ps.close();
+				}
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+	public void removeDealerDetail(int dealerId) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			String sql = "delete from user_info where userid=? and usertype='dealer'";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, dealerId);
+			int count = ps.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void updateDealerDetail(int dealerId,UserInformation user) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			String str = "UPDATE user_info SET username = ?,password = ?,phn_no = ?,address = ? WHERE userid = ?";
+			ps = con.prepareStatement(str);
+			
+			ps.setString(1, user.getUserName());
+			ps.setString(2, user.getPassword());
+			ps.setString(3, user.getPhn_no());
+			ps.setString(4, user.getAddress());
+			ps.setInt(5, dealerId);
+			int count = ps.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+
+		finally {
+			try {
+				if(con!=null) {
+					con.close();
+
+				}
+
+				if(ps!=null) {
+					ps.close();
+				}
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+	public String showDealerDetail() {
+		String result=" ";
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			String sql = "select * from user_info where usertype='dealer'";
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				result  = result + "\n" + "ID:" + rs.getInt("userid") + "\t\t" + 
+				"NAME:" + rs.getString("username") + "\t\t" +
+			    "PASSWORD:" + rs.getString("password") + "\t\t" +
+				"PHONE NUMBER:" + rs.getString("phn_no") + "\t\t" +
+			    "ADDRESS:" + rs.getString("address") + "\t\t" +
+				"EMAIL ID:" + rs.getString("email_id") + "\t\t" +
+			    "USERTYPE:" + rs.getString("usertype");
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result ;
+	}
+
+	public void addProductDetail(ProductInformation product) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			String str = "insert into product_info values(?,?,?,?,?)";
+			ps = con.prepareStatement(str);
+			ps.setInt(1,user.getUserId());
+			ps.setString(2,user.getUserName());
+			ps.setString(3,user.getPassword());
+			ps.setString(4,user.getPhn_no());
+			ps.setString(5,user.getAddress());
+			ps.setString(6,user.getEmail_id());
+			int count = ps.executeUpdate();
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+
+		finally {
+			try {
+				if(con!=null) {
+					con.close();
+
+				}
+
+				if(ps!=null) {
+					ps.close();
+				}
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+
+		
+		
+	}
+
+	public void removeProductDetai(int productId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void updateProductDetai(int productId, ProductInformation product) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public String showProductDetai() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}
+
+

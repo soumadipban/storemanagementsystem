@@ -1,0 +1,27 @@
+package com.capgemini.storemanagement.service.impl;
+
+import java.util.ArrayList;
+
+import com.capgemini.storemanagement.dao.DealerDao;
+import com.capgemini.storemanagement.dao.impl.DealerDaoImpl;
+import com.capgemini.storemanagement.dto.OrderInformation;
+import com.capgemini.storemanagement.dto.ProductInformation;
+import com.capgemini.storemanagement.service.DealerService;
+
+public class DealerServiceImpl implements DealerService {
+	
+	DealerDaoImpl dealer = new DealerDaoImpl();
+
+	public void orderProduct(OrderInformation order) {
+		dealer.orderProduct(order);
+		
+	}
+
+	public void changePriceOfProduct(int productId) {
+		dealer.changePriceOfProduct(productId);
+		
+	}
+
+
+
+}

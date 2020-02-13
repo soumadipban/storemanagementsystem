@@ -1,0 +1,191 @@
+package com.capgemini.storemanagement.dao.impl;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.capgemini.storemanagement.dao.AdminDao;
+import com.capgemini.storemanagement.dto.UserInformation;
+import com.capgemini.storemanagement.exception.UserNotFoundException;
+
+public class AdminDaoImpl implements AdminDao {
+	Connection con = null;
+	PreparedStatement ps = null;
+	ResultSet rs = null;
+
+	public boolean login(String name, String password,int id) throws UserNotFoundException {
+		boolean isCheck = false;
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			String str = "select username,password from user_info where userid=?";
+			ps = con.prepareStatement(str);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				if(rs.getString("username").equals(name) && rs.getString("password").equals(password)) {
+					isCheck = true;
+					//throw  new UserNotFoundException("User Not Found");
+				}
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return isCheck;
+	}
+
+
+
+	public void addManufacturer(UserInformation user) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			String str = "insert into user_info values(?,?,?,?,?,?,'manufacturer')";
+			ps = con.prepareStatement(str);
+			ps.setInt(1, user.getUserId());
+			ps.setString(2, user.getUserName());
+			ps.setString(3, user.getPassword());
+			ps.setString(4, user.getPhn_no());
+			ps.setString(5, user.getAddress());
+			ps.setString(6, user.getEmail_id());
+			int count = ps.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+
+		finally {
+			try {
+				if(con!=null) {
+					con.close();
+
+				}
+
+				if(ps!=null) {
+					ps.close();
+				}
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+
+	public void modifyManufacturer(int userId,UserInformation user) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			String str = "UPDATE user_info SET username = ?,password = ?,phn_no = ?,address = ? WHERE userid = ?";
+			ps = con.prepareStatement(str);
+
+			ps.setString(1, user.getUserName());
+			ps.setString(2, user.getPassword());
+			ps.setString(3, user.getPhn_no());
+			ps.setString(4, user.getAddress());
+			ps.setInt(5, userId);
+			int count = ps.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+
+		finally {
+			try {
+				if(con!=null) {
+					con.close();
+
+				}
+
+				if(ps!=null) {
+					ps.close();
+				}
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+
+
+	public boolean deleteManufacturer(int userId) {
+		boolean isDeleted=false;
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			String sql = "delete from user_info where userid=?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, userId);
+			int count = ps.executeUpdate();
+			if(count!=0)
+				isDeleted=true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return isDeleted;
+	}
+
+
+
+	public String showManufacturer() {
+		String result=" ";
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			String sql = "select * from user_info where usertype='manufacturer'";
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				result  = result + "\n" + "ID:" + rs.getInt("userid") + "\t\t" + 
+						"NAME:" + rs.getString("username") + "\t\t" +
+						"PHONE NUMBER:" + rs.getString("phn_no") + "\t\t" +
+						"ADDRESS:" + rs.getString("address") + "\t\t" +
+						"EMAIL ID:" + rs.getString("email_id");
+			}
+
+			//list.add(a1);
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result ;
+	}
+
+
+
+
+	/*	public void addManufacturerDetail(ManufacturerInformation manufacturer) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345";
+			con = DriverManager.getConnection(dburl);
+			String query = "insert into manufacturer_info values(?,?,?,?,?)";
+			ps = con.prepareStatement(query);
+			ps.setInt(1, manufacturer.getManufacturerId());
+			ps.setString(2, manufacturer.getManufacturerName());
+			ps.setString(3,manufacturer.getManufacturerAddress());
+			ps.setString(4,manufacturer.getPhoneNo());
+			ps.setString(5,manufacturer.getEmailId());
+			int count = ps.executeUpdate();
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+
+	}*/
+
+
+
+}

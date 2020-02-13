@@ -1,0 +1,161 @@
+package com.capgemini.storemanagement.controller;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import org.apache.log4j.Logger;
+
+import com.capgemini.storemanagement.dao.impl.DealerDaoImpl;
+import com.capgemini.storemanagement.dao.impl.ManufacturerDaoImpl;
+import com.capgemini.storemanagement.dto.ProductInformation;
+import com.capgemini.storemanagement.dto.UserInformation;
+import com.capgemini.storemanagement.service.impl.ManufacturerServiceImpl;
+
+public class ManufacturerController {
+	Scanner scan = new Scanner(System.in);
+	UserInformation dinfo = new UserInformation();
+	ManufacturerServiceImpl manufacturer = new ManufacturerServiceImpl();
+	
+	int choice = 0;
+
+	Logger log = Logger.getLogger("store");
+
+	void manufacturerTask() {
+
+		int choice = 0;
+
+		log.trace("\n");
+		log.trace("Welcome to Manufacturer's page");
+		log.trace("1.Add Dealer Information");
+		log.trace("2.Update Dealer Information");
+		log.trace("3.Delete Dealer Information");
+		log.trace("4.Show Dealer Information");
+		log.trace("5.Add Product Detail");
+		log.trace("6.Remove Product Detail");
+		log.trace("7.Update Product Detail");
+		log.trace("8.Show the Product Detail");
+		log.trace("9.Change Cost Price of the Product");
+		log.trace(".Exit");
+		
+
+
+		do {
+
+			log.trace("------------------------");
+			log.trace("Enter Your Choice");
+			log.trace("------------------------");
+			choice = scan.nextInt();
+
+			switch (choice) {
+			case 1:
+				
+				log.info("Enter the DealerId");
+				int dealerId = scan.nextInt();
+				dinfo.setUserId(dealerId);
+
+				log.info("Enter the Dealer Name");
+				String dealerName = scan.next();
+				dinfo.setUserName(dealerName);
+
+				log.info("Enter the Password");
+				String password = scan.next();
+				dinfo.setPassword(password);
+				
+				log.info("Enter the PhoneNumber");
+				String Phn_no = scan.next();
+				dinfo.setPhn_no(Phn_no);
+				
+				log.info("Enter the Address");
+				String address = scan.next();
+				dinfo.setAddress(address);
+
+				log.info("Enter the Email_Id");
+				String emailId = scan.next();
+				dinfo.setEmail_id(emailId);
+				
+				manufacturer.addDealerDetail(dinfo);
+				log.info("\n");
+				log.info("Insert Succesfully");
+				break;
+
+			case 2:
+
+				UserInformation user1 = new UserInformation();
+				log.info("Enter the Dealer_ID You want to Update");
+				int id = scan.nextInt();
+				
+				log.info("Enter the Dealer Name");
+				String dealername = scan.next();
+				dinfo.setUserName(dealername);
+
+				log.info("Enter the Password");
+				String pwd = scan.next();
+				dinfo.setPassword(pwd);
+				
+				log.info("Enter the PhoneNumber");
+				String phn_no = scan.next();
+				dinfo.setPhn_no(phn_no);
+				
+				log.info("Enter the Address");
+				String address_info = scan.next();
+				dinfo.setAddress(address_info);
+
+				log.info("Enter the Email_Id");
+				String email_Id = scan.next();
+				dinfo.setEmail_id(email_Id);
+				
+				manufacturer.updateDealerDetail(id, dinfo);
+				log.info("\n");
+				log.info("Record has been updated Successfully!!!");
+				break;
+				
+			case 3:
+				log.info("Enter the Dealer_Id You want to Delete");
+				int dealerid = scan.nextInt();
+				manufacturer.removeDealerDetail(dealerid);
+				log.info("Dealer's information is deleted Succesfully");
+				break;
+				
+			case 4:
+				log.info("--------------Dealer's Info----------------");
+				String ResultSet = manufacturer.showDealerDetail();
+				log.info(ResultSet);
+				break;
+				
+			case 5:
+				ProductInformation product = new ProductInformation();
+				log.trace("*********Enter Product Detail************");
+				
+				log.info("Enter the ProductId");
+				int productId = scan.nextInt();
+				product.setProductId(productId);
+
+				log.info("Enter the Product Name");
+				String productName = scan.next();
+				product.setProductName(productName);
+
+				log.info("Enter the ProductBrand");
+				String productBrand = scan.next();
+				product.setProductBrand(productBrand);
+				
+				log.info("Enter the Quantity");
+				int quantity = scan.nextInt();
+				dinfo.setPhn_no(quantity);
+				
+				log.info("Enter the Address");
+				String address = scan.next();
+				dinfo.setAddress(address);
+
+				log.info("Enter the Email_Id");
+				String emailId = scan.next();
+				dinfo.setEmail_id(emailId);
+				
+				manufacturer.addDealerDetail(dinfo);
+				log.info("\n");
+				log.info("Insert Succesfully");
+				break;
+				
+			}
+		}while(choice!=6);
+	}
+}

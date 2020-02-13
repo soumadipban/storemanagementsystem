@@ -1,0 +1,12 @@
+package com.capgemini.storemanagement.service;
+
+import java.util.ArrayList;
+
+import com.capgemini.storemanagement.dto.ProductInformation;
+
+public interface DealerService {
+	public void addProduct(ProductInformation product);
+	public void removeProduct(int productId);
+	public void updateProduct(int productId);
+	public ArrayList<Object> showProductInfo();
+}

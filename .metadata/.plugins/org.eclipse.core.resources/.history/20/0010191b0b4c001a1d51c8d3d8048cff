@@ -1,0 +1,30 @@
+package com.capgemini.storemanagement.service.impl;
+
+import com.capgemini.storemanagement.dao.impl.ManufacturerDaoImpl;
+import com.capgemini.storemanagement.dto.UserInformation;
+import com.capgemini.storemanagement.service.ManufacturerService;
+public class ManufacturerServiceImpl implements ManufacturerService {
+	
+	ManufacturerDaoImpl manufacturer = new ManufacturerDaoImpl();
+
+	public void addDealerDetail(UserInformation user) {
+		manufacturer.addDealerDetail(user);
+		
+	}
+
+	public void removeDealerDetail(int dealerId) {
+		manufacturer.removeDealerDetail(dealerId);
+		
+	}
+
+	public void updateDealerDetail(int dealerId, UserInformation user) {
+		manufacturer.updateDealerDetail(dealerId, user);
+		
+	}
+
+	public String showDealerDetail() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

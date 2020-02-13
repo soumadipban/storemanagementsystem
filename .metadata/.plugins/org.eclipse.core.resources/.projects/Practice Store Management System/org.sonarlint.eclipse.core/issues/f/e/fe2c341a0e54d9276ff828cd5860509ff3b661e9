@@ -1,0 +1,50 @@
+
+p"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(¨ÕÉ8ÊõÌ…‚.H‰
+RCRITICALZ
+CODE_SMELL
+l
+squid:S106&"9Replace this use of System.out or System.err by a logger.(û²†ø8²´…‚.HŒ
+RMAJORZ
+CODE_SMELL
+q
+squid:S106"9Replace this use of System.out or System.err by a logger.(éç¬ùÿÿÿÿ8Ìˆ£‚.H˜
+RMAJORZ
+CODE_SMELL
+l
+squid:S106"9Replace this use of System.out or System.err by a logger.(™¬Ç•8²´…‚.H™
+RMAJORZ
+CODE_SMELL
+q
+squid:S106)"9Replace this use of System.out or System.err by a logger.(ÏÍÉüÿÿÿÿ8²´…‚.H
+RMAJORZ
+CODE_SMELL
+l
+squid:S106"9Replace this use of System.out or System.err by a logger.(£”ô8²´…‚.H‹
+RMAJORZ
+CODE_SMELL
+q
+squid:S106"9Replace this use of System.out or System.err by a logger.(–ùÁ€úÿÿÿÿ8²´…‚.H‘
+RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(´ÈÛŸ8Ûüõ£‚.H”
+RMAJORZ
+CODE_SMELL
+q
+squid:S106$"9Replace this use of System.out or System.err by a logger.(“¸Àøÿÿÿÿ8²´…‚.H•
+RMAJORZ
+CODE_SMELL
+squid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(¨ÕÉ8²´…‚.H—
+RMINORZ
+CODE_SMELL
+q
+squid:S1066"9Replace this use of System.out or System.err by a logger.(Ê•Àşøÿÿÿÿ8¦ œ†‚.H’
+RMAJORZ
+CODE_SMELL
+q
+squid:S106"9Replace this use of System.out or System.err by a logger.(éç¬ùÿÿÿÿ8²´…‚.Hˆ
+RMAJORZ
+CODE_SMELL
+q
+squid:S106"9Replace this use of System.out or System.err by a logger.(Òôá¤üÿÿÿÿ8Ìˆ£‚.HŠ
+RMAJORZ
+CODE_SMELL

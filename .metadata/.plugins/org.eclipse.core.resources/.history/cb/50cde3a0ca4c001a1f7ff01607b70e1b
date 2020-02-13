@@ -1,0 +1,32 @@
+package com.capgemini.storemanagement.validation;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
+public class ValidateCheck {
+	
+	static Logger log = new LogManager().getLogger("store");
+	
+	public static boolean passwordValidator(String inputAdminName, String inputAdminPassword) {
+		return false;
+		
+	}
+	
+	public static boolean emailValidation(String email) {
+		Pattern pattern;
+		Matcher matcher;
+		final String EMAIL_PATTERN = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z"
+				+ "A-Z]{2,7}$";
+		pattern = Pattern.compile(EMAIL_PATTERN);
+		if (email == null) {
+			return false;
+		} else {
+			return pattern.matcher(email).matches();
+		}
+
+	}
+			
+}

@@ -1,0 +1,49 @@
+package com.capgemini.storemanagement.service.impl;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import com.capgemini.storemanagement.dto.UserInformation;
+import com.capgemini.storemanager.util.PasswordEncoder;
+
+class ManufacturerServiceImplTest {
+	
+	ManufacturerServiceImpl manufacturer = new ManufacturerServiceImpl();
+	
+	@Test
+	void addDealerTest() {
+		String password = PasswordEncoder.passwordEncoder("soumadip@123Ban");
+		manufacturer.addDealerDetail(new UserInformation(7,"george",password,"8017740129","Germany","george@gmail.com","dealer"));
+	}
+
+	@Test
+	void removeDealerTest() {
+		manufacturer.removeDealerDetail(123);
+
+	}
+
+	@Test
+	void removeDealerTest() {
+		dao.removeDealer("3");
+	}
+
+	@Test
+	void viewAllDealers() {
+		dao.viewAllDealers("Admin");
+	}
+	@Test
+	void addProductTest() {
+		dao.addProduct(new Products(12,"puma",23.45,"four",5));
+	}
+	
+	@Test
+	void modifyProductTest() {
+		dao.modifyProduct(2, new Products(12,"puma",23.45,"four",5));
+	}
+	@Test
+	void removeProduct() {
+		dao.removeProduct(12);
+	}
+
+*/}

@@ -1,0 +1,53 @@
+package com.capgemini.storemanagement.service.impl;
+
+
+
+import com.capgemini.storemanagement.dao.impl.DealerDaoImpl;
+import com.capgemini.storemanagement.dto.DealerSellingStockInfomation;
+import com.capgemini.storemanagement.dto.OrderInformation;
+import com.capgemini.storemanagement.dto.ProductInformation;
+import com.capgemini.storemanagement.service.DealerService;
+
+public class DealerServiceImpl implements DealerService {
+	
+	DealerDaoImpl dealer = new DealerDaoImpl();
+
+	public void orderProduct(OrderInformation order) {
+		dealer.orderProduct(order);
+		
+	}
+
+	public void changePriceOfProduct(int productId,ProductInformation product) {
+		dealer.changePriceOfProduct(productId,product);
+		
+	}
+
+	public int returnProductId(String productName) {
+		int id = dealer.returnProductId(productName);
+		return id;
+		
+	}
+
+
+	public String showOrderDetail() {
+	 String result = dealer.showOrderDetail();
+	 return result;
+	}
+
+	public void addStorage(DealerSellingStockInfomation stock) {
+		dealer.addStorage(stock);
+		
+	}
+
+	public int quantityChecker(int id) {
+		int check = dealer.quantityChecker(id);
+		return check;
+	}
+
+	public void updateProduct(int id, int remainingQuantity) {
+		dealer.updateProduct(id,remainingQuantity);
+		
+	}
+
+
+}
