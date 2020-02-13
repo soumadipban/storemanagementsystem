@@ -1,7 +1,5 @@
 package com.capgemini.storemanagement.dao.impl;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
 import com.capgemini.storemanagement.dto.DealerSellingStockInfomation;
@@ -45,7 +43,7 @@ class DealerDaoImplTest {
 	}
 	@Test
 	void updateQuantityTest() {
-		dealer.updateQuantity(4,33);
+		dealer.updateQuantity(4,33,12);
 	}
 	@Test
 	void dealerQuantityTest() {

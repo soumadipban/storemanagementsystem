@@ -1,0 +1,306 @@
+package com.capgemini.storemanagement.dao.impl;
+
+import java.io.FileReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Properties;
+
+import com.capgemini.storemanagement.dao.DealerDao;
+import com.capgemini.storemanagement.dto.DealerSellingStockInfomation;
+import com.capgemini.storemanagement.dto.OrderInformation;
+import com.capgemini.storemanagement.dto.ProductInformation;
+
+public class DealerDaoImpl implements DealerDao {
+	Connection con = null;
+	PreparedStatement ps = null;
+	ResultSet rs = null;
+	FileReader fileReader;
+	Properties properties;
+
+	public DealerDaoImpl() {
+		try {
+			fileReader = new FileReader("user.properties");
+			properties = new Properties();
+			properties.load(fileReader);
+			Class.forName(properties.getProperty("driver"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/*
+	 * public void orderProduct(OrderInformation order) { try {
+	 * Class.forName("com.mysql.jdbc.Driver").newInstance(); String dburl =
+	 * "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+	 * con = DriverManager.getConnection(dburl); String str =
+	 * "insert into order_info values(?,?,?,?)"; ps = con.prepareStatement(str);
+	 * ps.setInt(1, order.getOrderId()); ps.setInt(2, order.getProductId());
+	 * ps.setInt(3, order.getQuantity()); ps.setInt(4, order.getTotalPrice()); int
+	 * count = ps.executeUpdate();
+	 * 
+	 * 
+	 * String query = "insert into dealer's_selling_stock values(id,?,?,?)"; pstmt =
+	 * con.prepareStatement(query); pstmt.setInt(2,stock.getQuantity());
+	 * pstmt.setInt(3,stock.getToalPrice());
+	 * pstmt.setInt(4,stock.getDiscountPrice()); int count1 = ps.executeUpdate();
+	 * 
+	 * } catch (Exception e) { e.printStackTrace(); }
+	 * 
+	 * finally { try { if (con != null) { con.close();
+	 * 
+	 * }
+	 * 
+	 * if (ps != null) { ps.close(); } } catch (Exception e) { e.printStackTrace();
+	 * } }
+	 * 
+	 * }
+	 */
+
+	public void orderProduct(OrderInformation order) {
+		String str = "insert into order_info values(?,?,?,?)";
+		try (Connection con = DriverManager.getConnection(properties.getProperty("dburl"));
+				PreparedStatement ps = con.prepareStatement(str)) {
+
+			ps.setInt(1, order.getOrderId());
+			ps.setInt(2, order.getProductId());
+			ps.setInt(3, order.getQuantity());
+			ps.setInt(4, order.getTotalPrice());
+			ps.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void changePriceOfProduct(int productId, ProductInformation product) {
+		String str = " update product_info set selling_price = ? where product_id=? ";
+		try (Connection con = DriverManager.getConnection(properties.getProperty("dburl"));
+				PreparedStatement ps = con.prepareStatement(str)) {
+			ps.setInt(1, product.getSellingPrice());
+			ps.setInt(2, productId);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public int returnProductId(String productName) {
+		int id = 0;
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			String str = "select product_id from product_info where product_name=?";
+			ps = con.prepareStatement(str);
+			ps.setString(1, productName);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				id = rs.getInt("product_id");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		finally {
+			try {
+				if (con != null) {
+					con.close();
+
+				}
+
+				if (ps != null) {
+					ps.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return id;
+
+	}
+
+	public String showOrderDetail() {
+		String result = " ";
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			String sql = "select * from order_info";
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				result = result + "\n" + "ID:" + rs.getInt("order_info") + "\t\t" + "QUANTITY:" + rs.getInt("quantity")
+						+ "\t\t" + "PRODUCT ID:" + rs.getInt("product_id") + "\t\t" + "TOTAL PRICE:"
+						+ rs.getString("total_price");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	public void addStorage(DealerSellingStockInfomation stock) {
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+
+			String query = "insert into dealer_selling_stock values(?,?,?)";
+
+			ps = con.prepareStatement(query);
+
+			ps.setInt(2, stock.getQuantity());
+			ps.setInt(1, stock.getProductId());
+			ps.setInt(3, stock.getToalPrice());
+
+			ps.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		finally {
+			try {
+				if (con != null) {
+					con.close();
+
+				}
+
+				if (ps != null) {
+					ps.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+	public int quantityChecker(int id) {
+		int quantity = 0;
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			String sql = "select quantity from product_info where product_id=?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				quantity = rs.getInt("quantity");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return quantity;
+	}
+
+	public void updateProduct(int id, int remainingQuantity) {
+		String query = "update product_info set quantity=? where product_id=?";
+		try (Connection con = DriverManager.getConnection(properties.getProperty("dburl"));
+				PreparedStatement ps = con.prepareStatement(query)) {
+			ps.setInt(1, remainingQuantity);
+			ps.setInt(2, id);
+			ps.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public int returnCostPrice(int id) {
+		int cp = 0;
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			String str = "select cost_price from product_info where product_id=?";
+			ps = con.prepareStatement(str);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				cp = rs.getInt("cost_price");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		finally {
+			try {
+				if (con != null) {
+					con.close();
+
+				}
+
+				if (ps != null) {
+					ps.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return cp;
+	}
+
+	public boolean checkProductId(int id) {
+		boolean isCheck = false;
+		String query = "select product_id from dealer_selling_stock";
+		try (Connection con = DriverManager.getConnection(properties.getProperty("dburl"));
+				PreparedStatement ps = con.prepareStatement(query);
+				ResultSet rs = ps.executeQuery()) {
+			while (rs.next()) {
+				if (rs.getInt("product_id") == id) {
+					isCheck = true;
+					break;
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return isCheck;
+	}
+
+	public void updateQuantity(int id, int quantity) {
+		String query = "update dealer_selling_stock set quantity=? where product_id=?";
+		try (Connection con = DriverManager.getConnection(properties.getProperty("dburl"));
+				PreparedStatement ps = con.prepareStatement(query)) {
+
+			ps.setInt(1, quantity);
+			ps.setInt(2, id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public int dealerQuantity(int id) {
+		int quantity = 0;
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			// String query = "select quantity from dealer_selling_stock where product_id='"
+			// + id + "'";
+			String query = "select quantity,product_id from dealer_selling_stock where product_id = ?";
+			ps = con.prepareStatement(query);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				if(rs.getInt("product_id")==id) {
+					quantity = rs.getInt("quantity");
+					System.out.println(quantity);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return quantity;
+	}
+}

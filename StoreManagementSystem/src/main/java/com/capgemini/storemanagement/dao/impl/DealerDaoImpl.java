@@ -251,30 +251,36 @@ public class DealerDaoImpl implements DealerDao {
 
 	public boolean checkProductId(int id) {
 		boolean isCheck = false;
-		String query = "select product_id from product_info";
-		try (Connection con = DriverManager.getConnection(properties.getProperty("dburl"));
-				PreparedStatement ps = con.prepareStatement(query);
-				ResultSet rs = ps.executeQuery()) {
+		@SuppressWarnings("unused")
+		int quantityStore;
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			String query = "select product_id from dealer_selling_stock where product_id=?";
+			ps = con.prepareStatement(query);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
 			while (rs.next()) {
 				if (rs.getInt("product_id") == id) {
 					isCheck = true;
 					break;
 				}
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return isCheck;
 	}
 
-	public void updateQuantity(int id, int quantity) {
-		String query = "update dealer_selling_stock set quantity=? where product_id=?";
+	public void updateQuantity(int id, int quantity, int totalCost) {
+		String query = "update dealer_selling_stock set quantity=?,total_price=? where product_id=?";
 		try (Connection con = DriverManager.getConnection(properties.getProperty("dburl"));
 				PreparedStatement ps = con.prepareStatement(query)) {
-
+			ps.setInt(2, totalCost);
 			ps.setInt(1, quantity);
-			ps.setInt(2, id);
+			ps.setInt(3, id);
+			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -282,12 +288,20 @@ public class DealerDaoImpl implements DealerDao {
 
 	public int dealerQuantity(int id) {
 		int quantity = 0;
-		String query = "select quantity from dealer_selling_stock where product_id='" + id + "'";
-		try (Connection con = DriverManager.getConnection(properties.getProperty("dburl"));
-				PreparedStatement ps = con.prepareStatement(query);
-				ResultSet rs = ps.executeQuery()) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			String dburl = "jdbc:mysql://localhost:3306/store_management_system_db?user=root&password=12345&useSSL=false";
+			con = DriverManager.getConnection(dburl);
+			// String query = "select quantity from dealer_selling_stock where product_id='"
+			// + id + "'";
+			String query = "select quantity,product_id from dealer_selling_stock where product_id = ?";
+			ps = con.prepareStatement(query);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
 			while (rs.next()) {
-				quantity = rs.getInt("quantity");
+				if (rs.getInt("product_id") == id) {
+					quantity = rs.getInt("quantity");
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

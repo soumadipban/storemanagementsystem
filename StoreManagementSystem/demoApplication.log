@@ -11081,3 +11081,575 @@ Login Succesfull
 		------------------------
 		Enter Your Choice
 		------------------------
+Enter the DealerId
+Enter the Dealer Name
+Enter the Password
+Invalid Password
+Enter the Password
+
+
+		STORE MANAGEMENT SYSTEM 
+
+
+		1.Admin
+		2.Manufacturer
+		3.Dealer
+		4.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		Welcome to Manufacturer's page
+		1.Add Dealer Information
+		2.Update Dealer Information
+		3.Delete Dealer Information
+		4.Show Dealer Information
+		5.Add Product Detail
+		6.Remove Product Detail
+		7.Update Product Detail
+		8.Show the Product Detail
+		9.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the DealerId
+Enter the input in specified format
+Enter the Dealer Name
+Invalid
+Enter the Dealer Name
+Invalid
+Enter the Dealer Name
+Enter the Password
+Invalid Password
+Enter the Password
+Enter the PhoneNumber
+Invalid Phone Number
+Enter the PhoneNumber
+Invalid Phone Number
+Enter the PhoneNumber
+Enter the Address
+Enter the Email_Id
+
+
+Insert Succesfully
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		STORE MANAGEMENT SYSTEM 
+
+
+		1.Admin
+		2.Manufacturer
+		3.Dealer
+		4.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		Welcome to Manufacturer's page
+		1.Add Dealer Information
+		2.Update Dealer Information
+		3.Delete Dealer Information
+		4.Show Dealer Information
+		5.Add Product Detail
+		6.Remove Product Detail
+		7.Update Product Detail
+		8.Show the Product Detail
+		9.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the DealerId
+Enter the Dealer Name
+Enter the Password
+Enter the PhoneNumber
+Enter the Address
+Enter the Email_Id
+
+
+Insert Succesfully
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the Dealer_ID You want to Update
+Enter the Dealer Name
+Enter the Password
+Enter the PhoneNumber
+Phone Number is not valid
+Enter the PhoneNumber
+Enter the Address
+Enter the Email_Id
+Entered Id is Wrong
+
+
+		Welcome to Manufacturer's page
+		1.Add Dealer Information
+		2.Update Dealer Information
+		3.Delete Dealer Information
+		4.Show Dealer Information
+		5.Add Product Detail
+		6.Remove Product Detail
+		7.Update Product Detail
+		8.Show the Product Detail
+		9.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the Dealer_ID You want to Update
+Enter the Dealer Name
+Enter the Password
+Enter the PhoneNumber
+Enter the Address
+Enter the Email_Id
+
+
+Record has been updated Successfully!!!
+		------------------------
+		Enter Your Choice
+		------------------------
+		--------------Dealer's Info----------------
+ 
+ID:2		NAME:rosalind		PHONE NUMBER:9831364426		ADDRESS:Delhi		EMAIL ID:george@gmail.com		
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the Dealer_Id You want to Delete
+Dealer's information is deleted Succesfully
+		------------------------
+		Enter Your Choice
+		------------------------
+		--------------Dealer's Info----------------
+ 
+		------------------------
+		Enter Your Choice
+		------------------------
+*********Enter Product Detail************
+Enter the ProductId
+
+
+		STORE MANAGEMENT SYSTEM 
+
+
+		1.Admin
+		2.Manufacturer
+		3.Dealer
+		4.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		Welcome to Manufacturer's page
+		1.Add Dealer Information
+		2.Update Dealer Information
+		3.Delete Dealer Information
+		4.Show Dealer Information
+		5.Add Product Detail
+		6.Remove Product Detail
+		7.Update Product Detail
+		8.Show the Product Detail
+		9.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+*********Enter Product Detail************
+Enter the ProductId
+Enter the input in specified format
+Enter the Product Name
+Enter the ProductBrand
+Enter the Quantity
+Enter the Cost Price
+
+
+Insert Succesfully
+		------------------------
+		Enter Your Choice
+		------------------------
+		--------------Product's Info----------------
+ 
+ID:1		PRODUCT NAME:bag		PRODUCT BRAND:puma		QUANTITY:100		COST PRICE:500		SELLING PRICE:0
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the Product_Id You want to Delete
+Product's information is deleted Succesfully
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		STORE MANAGEMENT SYSTEM 
+
+
+		1.Admin
+		2.Manufacturer
+		3.Dealer
+		4.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		Welcome to the Dealer Page
+		1.Show Product
+		2.Order Particular Product
+		3.Change Selling Price of the Product
+		4.Show Order Information
+		5.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+		--------------Product's Info----------------
+ 
+ID:1		PRODUCT NAME:Bag		PRODUCT BRAND:Puma		QUANTITY:100		COST PRICE:500		SELLING PRICE:0
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the product you want to Order
+Enter the Order Id
+Enter Quantity of Stock
+Quantity is more than the current stock
+Enter Quantity of Stock
+Order is Succesfully done
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		STORE MANAGEMENT SYSTEM 
+
+
+		1.Admin
+		2.Manufacturer
+		3.Dealer
+		4.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		Welcome to the Dealer Page
+		1.Show Product
+		2.Order Particular Product
+		3.Change Selling Price of the Product
+		4.Show Order Information
+		5.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+		--------------Product's Info----------------
+ 
+ID:1		PRODUCT NAME:Bag		PRODUCT BRAND:Puma		QUANTITY:60		COST PRICE:500		SELLING PRICE:0
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the product you want to Order
+Enter the Order Id
+Enter Quantity of Stock
+Order is Succesfully done
+		------------------------
+		Enter Your Choice
+		------------------------
+		--------------Product's Info----------------
+ 
+ID:1		PRODUCT NAME:Bag		PRODUCT BRAND:Puma		QUANTITY:30		COST PRICE:500		SELLING PRICE:0
+		------------------------
+		Enter Your Choice
+		------------------------
+		--------------Order's Info----------------
+ 
+ID:1		QUANTITY:30		PRODUCT ID:1		TOTAL PRICE:15000
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the product you want to Order
+Enter the Order Id
+Enter Quantity of Stock
+Order is Succesfully done
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the product you want to Order
+
+
+		STORE MANAGEMENT SYSTEM 
+
+
+		1.Admin
+		2.Manufacturer
+		3.Dealer
+		4.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		Welcome to the Dealer Page
+		1.Show Product
+		2.Order Particular Product
+		3.Change Selling Price of the Product
+		4.Show Order Information
+		5.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+		--------------Product's Info----------------
+ 
+ID:1		PRODUCT NAME:Bag		PRODUCT BRAND:Puma		QUANTITY:20		COST PRICE:500		SELLING PRICE:0
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the product you want to Order
+Enter the Order Id
+Enter Quantity of Stock
+Order is Succesfully done
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		STORE MANAGEMENT SYSTEM 
+
+
+		1.Admin
+		2.Manufacturer
+		3.Dealer
+		4.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		Welcome to the Dealer Page
+		1.Show Product
+		2.Order Particular Product
+		3.Change Selling Price of the Product
+		4.Show Order Information
+		5.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the product you want to Order
+Enter the Order Id
+Enter Quantity of Stock
+Order is Succesfully done
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		STORE MANAGEMENT SYSTEM 
+
+
+		1.Admin
+		2.Manufacturer
+		3.Dealer
+		4.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		Welcome to the Dealer Page
+		1.Show Product
+		2.Order Particular Product
+		3.Change Selling Price of the Product
+		4.Show Order Information
+		5.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the product you want to Order
+Enter the Order Id
+Enter Quantity of Stock
+Order is Succesfully done
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		STORE MANAGEMENT SYSTEM 
+
+
+		1.Admin
+		2.Manufacturer
+		3.Dealer
+		4.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		Welcome to the Dealer Page
+		1.Show Product
+		2.Order Particular Product
+		3.Change Selling Price of the Product
+		4.Show Order Information
+		5.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+		--------------Product's Info----------------
+ 
+ID:1		PRODUCT NAME:Bag		PRODUCT BRAND:Puma		QUANTITY:16		COST PRICE:500		SELLING PRICE:0
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the product you want to Order
+Enter the Order Id
+Enter Quantity of Stock
+Order is Succesfully done
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		STORE MANAGEMENT SYSTEM 
+
+
+		1.Admin
+		2.Manufacturer
+		3.Dealer
+		4.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		Welcome to the Dealer Page
+		1.Show Product
+		2.Order Particular Product
+		3.Change Selling Price of the Product
+		4.Show Order Information
+		5.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+		--------------Product's Info----------------
+ 
+ID:1		PRODUCT NAME:Bag		PRODUCT BRAND:Puma		QUANTITY:15		COST PRICE:500		SELLING PRICE:0
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the product you want to Order
+Enter the Order Id
+Enter Quantity of Stock
+Order is Succesfully done
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		STORE MANAGEMENT SYSTEM 
+
+
+		1.Admin
+		2.Manufacturer
+		3.Dealer
+		4.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		Welcome to the Dealer Page
+		1.Show Product
+		2.Order Particular Product
+		3.Change Selling Price of the Product
+		4.Show Order Information
+		5.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the product you want to Order
+Enter the Order Id
+Enter Quantity of Stock
+Order is Succesfully done
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		STORE MANAGEMENT SYSTEM 
+
+
+		1.Admin
+		2.Manufacturer
+		3.Dealer
+		4.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		Welcome to the Dealer Page
+		1.Show Product
+		2.Order Particular Product
+		3.Change Selling Price of the Product
+		4.Show Order Information
+		5.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the product you want to Order
+Enter the Order Id
+Enter Quantity of Stock
+Order is Succesfully done
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		STORE MANAGEMENT SYSTEM 
+
+
+		1.Admin
+		2.Manufacturer
+		3.Dealer
+		4.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+
+
+		Welcome to the Dealer Page
+		1.Show Product
+		2.Order Particular Product
+		3.Change Selling Price of the Product
+		4.Show Order Information
+		5.Exit
+		------------------------
+		Enter Your Choice
+		------------------------
+		--------------Product's Info----------------
+ 
+ID:1		PRODUCT NAME:Bag		PRODUCT BRAND:Puma		QUANTITY:12		COST PRICE:500		SELLING PRICE:0
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the product you want to Order
+Enter the Order Id
+Enter Quantity of Stock
+Order is Succesfully done
+		------------------------
+		Enter Your Choice
+		------------------------
+		--------------Order's Info----------------
+ 
+ID:1		QUANTITY:30		PRODUCT ID:1		TOTAL PRICE:15000
+ID:2		QUANTITY:1		PRODUCT ID:1		TOTAL PRICE:500
+ID:3		QUANTITY:1		PRODUCT ID:1		TOTAL PRICE:500
+		------------------------
+		Enter Your Choice
+		------------------------
+Enter the product you want to Order
+Enter the Order Id
+Enter Quantity of Stock
+Order is Succesfully done
+		------------------------
+		Enter Your Choice
+		------------------------

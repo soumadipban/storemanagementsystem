@@ -59,8 +59,8 @@ public class DealerServiceImpl implements DealerService {
 		return flag;
 	}
 
-	public void updateQuantity(int id, int quantity) {
-		dealer.updateQuantity(id,quantity);
+	public void updateQuantity(int id, int quantity, int totalCost) {
+		dealer.updateQuantity(id,quantity,totalCost);
 	}
 
 	public int dealerQuantity(int id) {

@@ -22,7 +22,6 @@ public class DealerController {
 
 	Logger log = Logger.getLogger("store");
 
-	
 	void dealerTask() {
 
 		int choice = 0;
@@ -51,8 +50,8 @@ public class DealerController {
 				break;
 
 			case 2:
-				int quantity = 0;
-
+				
+				int quantity;
 				OrderInformation order = new OrderInformation();
 				stock = new DealerSellingStockInfomation();
 
@@ -88,13 +87,16 @@ public class DealerController {
 				dealer.orderProduct(order);
 
 				log.info("Order is Succesfully done");
+				
+				boolean checkProductId = dealer.checkProductId(id);
 
-				if (dealer.checkProductId(id)) {
+				if (checkProductId) {
 					int dealerQuantity = dealer.dealerQuantity(id);
 					int quantityOfDealer = dealerQuantity + quantity;
-					dealer.updateQuantity(id, quantityOfDealer);
+					int totalCost = price * quantityOfDealer;
+					dealer.updateQuantity(id, quantityOfDealer,totalCost);
 
-				} else {
+				} else if(!checkProductId){
 					stock.setProductId(id);
 					stock.setQuantity(quantity);
 					stock.setToalPrice(quantity * price);
@@ -143,9 +145,9 @@ public class DealerController {
 			default:
 				try {
 					throw new InvalidChoiceException("Invalid choice");
-					}catch(InvalidChoiceException e) {
-						e.getMessage();
-					}
+				} catch (InvalidChoiceException e) {
+					e.getMessage();
+				}
 
 			}
 

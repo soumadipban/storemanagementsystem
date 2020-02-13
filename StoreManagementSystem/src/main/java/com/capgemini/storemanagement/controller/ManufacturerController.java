@@ -4,17 +4,18 @@ import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
-
 import com.capgemini.storemanagement.dto.ProductInformation;
 import com.capgemini.storemanagement.dto.UserInformation;
 import com.capgemini.storemanagement.exception.IdInvalidException;
 import com.capgemini.storemanagement.exception.InvalidChoiceException;
+import com.capgemini.storemanagement.service.impl.AdminServiceImpl;
 import com.capgemini.storemanagement.service.impl.ManufacturerServiceImpl;
 import com.capgemini.storemanagement.validation.ValidateCheck;
 import com.capgemini.storemanagement.validation.Validations;
 
 public class ManufacturerController {
 	Scanner scan = new Scanner(System.in);
+	AdminServiceImpl service = new AdminServiceImpl();
 	UserInformation dinfo = new UserInformation();
 	ProductInformation product = new ProductInformation();
 	ManufacturerServiceImpl manufacturer = new ManufacturerServiceImpl();
@@ -69,7 +70,8 @@ public class ManufacturerController {
 					log.info("Enter the Password");
 					String password = scan.next();
 					if (ValidateCheck.validPassword(password)) {
-						dinfo.setPassword(password);
+						String pwd = service.generatePassword(password);
+						dinfo.setPassword(pwd);
 						break;
 					} else
 						log.info("Invalid Password");
@@ -106,7 +108,7 @@ public class ManufacturerController {
 
 			case 2:
 
-				//UserInformation user1 = new UserInformation();
+				// UserInformation user1 = new UserInformation();
 				log.info("Enter the Dealer_ID You want to Update");
 				int id = scan.nextInt();
 
@@ -125,7 +127,8 @@ public class ManufacturerController {
 					log.info("Enter the Password");
 					String pwd = scan.next();
 					if (ValidateCheck.validPassword(pwd)) {
-						dinfo.setPassword(pwd);
+						String password = service.generatePassword(pwd);
+						dinfo.setPassword(password);
 						break;
 					} else
 						log.info("Password is not valid");
@@ -152,7 +155,7 @@ public class ManufacturerController {
 					if (ValidateCheck.emailValidation(email_Id)) {
 						dinfo.setEmail_id(email_Id);
 						break;
-					}else {
+					} else {
 						log.info("Email Id is Not Valid");
 					}
 				}
@@ -197,12 +200,20 @@ public class ManufacturerController {
 				log.trace("*********Enter Product Detail************");
 
 				log.info("Enter the ProductId");
+				scan = valid.integerValidation();
 				int productId = scan.nextInt();
 				product.setProductId(productId);
 
-				log.info("Enter the Product Name");
-				String productName = scan.next();
-				product.setProductName(productName);
+				while (true) {
+					log.info("Enter the Product Name");
+					String productName = scan.next();
+					if (valid.userNameValidation(productName)) {
+						product.setProductName(productName);
+						break;
+					} else {
+						log.info("The Product Name is not in format");
+					}
+				}
 
 				log.info("Enter the ProductBrand");
 				String productBrand = scan.next();
@@ -244,9 +255,16 @@ public class ManufacturerController {
 				log.info("Enter the Product_Id You want to Update");
 				int pid = scan.nextInt();
 
-				log.info("Enter the Product Name");
-				String productname = scan.next();
-				product.setProductName(productname);
+				while (true) {
+					log.info("Enter the Product Name");
+					String productname = scan.next();
+					if (valid.userNameValidation(productname)) {
+						product.setProductName(productname);
+						break;
+					} else {
+						log.info("The Product is not in correct format");
+					}
+				}
 
 				log.info("Enter the Product Brand");
 				String productbrand = scan.next();
